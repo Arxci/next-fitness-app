@@ -13,8 +13,46 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
-	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
+
+const categories: { title: string; href: string; description: string }[] = [
+	{
+		title: 'Business',
+		href: '#',
+		description:
+			'Explore Business Essentials: Strategy, Finance, Marketing, Management, Entrepreneurship, Sales, Economics.',
+	},
+	{
+		title: 'Development',
+		href: '#',
+		description:
+			'Discover Development: Coding, Web, App, Software, Design, UX/UI, Tech Skills, Programming.',
+	},
+	{
+		title: 'Finance & Accounting',
+		href: '#',
+		description:
+			'Master Finance & Accounting: Investments, Analysis, Budgeting, Financial Statements, Risk Management.',
+	},
+	{
+		title: 'IT & Software',
+		href: '#',
+		description:
+			'Explore IT & Software: Coding, Networks, Cybersecurity, Cloud Computing, Development Tools.',
+	},
+	{
+		title: 'Design',
+		href: '#',
+		description:
+			'Discover Design: Graphic, UX/UI, Product, Web, Creative Tools, Visual Communication.',
+	},
+	{
+		title: 'Health & Fitness',
+		href: '#',
+		description:
+			'Embrace Health & Fitness: Wellness, Exercise, Nutrition, Mental Health, Personal Development.',
+	},
+]
 
 const support: { title: string; href: string; description: string }[] = [
 	{
@@ -83,15 +121,20 @@ export function MainNav() {
 						</NavigationMenuContent>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
-						<Link
-							href="/docs"
-							legacyBehavior
-							passHref
-						>
-							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-								Newsfeed
-							</NavigationMenuLink>
-						</Link>
+						<NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+						<NavigationMenuContent>
+							<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+								{categories.map((item) => (
+									<ListItem
+										key={item.title}
+										title={item.title}
+										href={item.href}
+									>
+										{item.description}
+									</ListItem>
+								))}
+							</ul>
+						</NavigationMenuContent>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
 						<NavigationMenuTrigger>Support</NavigationMenuTrigger>

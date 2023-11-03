@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import { SiteHeader } from '@/components/site-header'
+import { SiteHeader } from '@/app/components/layout/site-header'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',

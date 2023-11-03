@@ -20,10 +20,10 @@ const SearchInput: React.FC<InputProps> = ({ className, ...props }) => {
 				/>
 			</div>
 			<input
-				type="search"
+				type="text"
 				id="search"
 				placeholder="Search..."
-				className="flex h-full w-full rounded-md bg-background file:border-0 placeholder:text-muted-foreground focus-visible:outline-none  disabled:cursor-not-allowed "
+				className=" flex h-full w-full rounded-md bg-background file:border-0 placeholder:text-muted-foreground focus-visible:outline-none  disabled:cursor-not-allowed "
 				{...props}
 			/>
 		</div>

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { MainNav } from './main-nav'
-import { Button } from './ui/button'
+import { Button } from '../../../components/ui/button'
 import { MainNavSearch } from './main-nav-search'
 
 export function SiteHeader() {

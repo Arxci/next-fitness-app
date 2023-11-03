@@ -1,6 +1,6 @@
 'use client'
 
-import { SearchInput } from './ui/search-input'
+import { SearchInput } from '../../../components/ui/search-input'
 
 export function MainNavSearch() {
 	return (
