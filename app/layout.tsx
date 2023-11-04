@@ -2,9 +2,10 @@ import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 
+import { ClerkProvider } from '@clerk/nextjs'
+
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import { SiteHeader } from '@/app/components/layout/site-header'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -15,23 +16,22 @@ interface RootLayoutProps {
 	children: React.ReactNode
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
 	return (
-		<html
-			lang="en"
-			suppressHydrationWarning
-		>
-			<body
-				className={cn(
-					'min-h-screen bg-background font-sans antialiased',
-					fontSans.variable
-				)}
+		<ClerkProvider>
+			<html
+				lang="en"
+				suppressHydrationWarning
 			>
-				<div className="relative flex min-h-screen flex-col">
-					<SiteHeader />
+				<body
+					className={cn(
+						'min-h-screen bg-background font-sans antialiased',
+						fontSans.variable
+					)}
+				>
 					{children}
-				</div>
-			</body>
-		</html>
+				</body>
+			</html>
+		</ClerkProvider>
 	)
 }

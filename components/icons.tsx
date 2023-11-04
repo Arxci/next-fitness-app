@@ -1,6 +1,9 @@
 import {
+	faArrowRightFromBracket,
 	faCartShopping,
+	faGear,
 	faMagnifyingGlass,
+	faUser,
 	faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,6 +31,24 @@ export const Icons = {
 		<FontAwesomeIcon
 			className={cn('w-4 h-4', props.className)}
 			icon={faXmark}
+		/>
+	),
+	user: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faUser}
+		/>
+	),
+	exit: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faArrowRightFromBracket}
+		/>
+	),
+	settings: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faGear}
 		/>
 	),
 }

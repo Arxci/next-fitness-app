@@ -66,9 +66,9 @@ const CourseSearch = () => {
 							aria-label="Clear search"
 							variant="ghost"
 							size="icon"
-							className="hover:bg-transparent h-auto"
+							className="hover:bg-transparent h-auto group"
 						>
-							<Icons.cross />
+							<Icons.cross className="text-muted-foreground hover:text-foreground group-focus:text-foreground" />
 						</Button>
 					</div>
 				)}
