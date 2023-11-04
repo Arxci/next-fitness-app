@@ -11,7 +11,7 @@ export default function AuthLayout({ children }: React.PropsWithChildren) {
 			<AspectRatio ratio={16 / 9}>
 				<Image
 					src="/images/auth-layout.webp"
-					alt="A skateboarder doing a high drop"
+					alt="A person using a computer"
 					fill
 					className="absolute inset-0 object-cover"
 					priority
