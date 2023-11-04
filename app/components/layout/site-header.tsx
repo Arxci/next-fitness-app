@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 import { MainNav } from './main-nav'
 import { Button } from '../../../components/ui/button'
-import { MainNavSearch } from './main-nav-search'
+import { CartSheet } from '../cart/cart-sheet'
+import { CourseSearch } from './course-search'
 
 export function SiteHeader() {
 	return (
@@ -11,13 +12,11 @@ export function SiteHeader() {
 				<MainNav />
 				<div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
 					<div className="w-full flex-1 md:w-auto md:flex-none">
-						<MainNavSearch />
+						<CourseSearch />
 					</div>
-					<nav className="flex items-center">
-						<Button
-							asChild
-							size="sm"
-						>
+					<nav className="flex items-center space-x-2">
+						<CartSheet />
+						<Button asChild>
 							<Link
 								href="#"
 								rel="noreferrer"
