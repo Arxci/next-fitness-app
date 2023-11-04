@@ -32,13 +32,13 @@ const CourseSearch = () => {
 			>
 				<div className="h-full aspect-square flex items-center justify-center">
 					<Icons.search />
-					<label
-						htmlFor="search"
-						className="sr-only"
-					>
-						Search for a course
-					</label>
 				</div>
+				<label
+					htmlFor="search"
+					className="sr-only"
+				>
+					Search for a course
+				</label>
 				<TooltipProvider>
 					<Tooltip>
 						<TooltipTrigger asChild>
@@ -49,7 +49,7 @@ const CourseSearch = () => {
 								placeholder="Search..."
 								value={value}
 								onChange={inputChangeHandle}
-								className=" flex w-full rounded-md bg-background file:border-0 placeholder:text-muted-foreground focus-visible:outline-none  disabled:cursor-not-allowed "
+								className="w-full rounded-md bg-background  placeholder:text-muted-foreground focus-visible:outline-none  disabled:cursor-not-allowed "
 							/>
 						</TooltipTrigger>
 						<TooltipContent>
