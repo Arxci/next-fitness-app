@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { SignInButton, SignOutButton } from '@clerk/nextjs'
+import { SignInButton } from '@clerk/nextjs'
 
 import { MainNav } from './main-nav'
 import { Button } from '../../../../components/ui/button'
@@ -104,17 +104,13 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 										asChild
 										className="w-full"
 									>
-										<button>
-											<SignOutButton>
-												<span>
-													<Icons.exit
-														className="mr-2 h-4 w-4"
-														aria-hidden="true"
-													/>
-													Log out
-												</span>
-											</SignOutButton>
-										</button>
+										<Link href="/sign-out">
+											<Icons.exit
+												className="mr-2 h-4 w-4"
+												aria-hidden="true"
+											/>
+											Log out
+										</Link>
 									</DropdownMenuItem>
 								</DropdownMenuContent>
 							</DropdownMenu>
