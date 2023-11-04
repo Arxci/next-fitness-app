@@ -104,15 +104,17 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 										asChild
 										className="w-full"
 									>
-										<SignOutButton>
-											<button>
-												<Icons.exit
-													className="mr-2 h-4 w-4"
-													aria-hidden="true"
-												/>
-												Log out
-											</button>
-										</SignOutButton>
+										<button>
+											<SignOutButton>
+												<span>
+													<Icons.exit
+														className="mr-2 h-4 w-4"
+														aria-hidden="true"
+													/>
+													Log out
+												</span>
+											</SignOutButton>
+										</button>
 									</DropdownMenuItem>
 								</DropdownMenuContent>
 							</DropdownMenu>
