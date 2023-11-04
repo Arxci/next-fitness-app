@@ -1,21 +1,22 @@
-import { type HandleOAuthCallbackParams } from '@clerk/types'
-
 import { Shell } from '@/components/shells/shell'
-import SSOCallback from '../components/sso-callback'
+import { AuthenticateWithRedirectCallback } from '@clerk/nextjs'
+import { Icons } from '@/components/icons'
 
-// Running out of edge function execution units on vercel free plan
-// export const runtime = "edge"
-
-export interface SSOCallbackPageProps {
-	searchParams: HandleOAuthCallbackParams
-}
-
-export default function SSOCallbackPage({
-	searchParams,
-}: SSOCallbackPageProps) {
+export default function SSOCallbackPage() {
 	return (
 		<Shell className="max-w-lg">
-			<SSOCallback searchParams={searchParams} />
+			<div
+				role="status"
+				aria-label="Loading"
+				aria-describedby="loading-description"
+				className="flex items-center justify-center"
+			>
+				<AuthenticateWithRedirectCallback />
+				<Icons.spinner
+					className="h-8 w-8 animate-spin"
+					aria-hidden="true"
+				/>
+			</div>
 		</Shell>
 	)
 }

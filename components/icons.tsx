@@ -9,7 +9,7 @@ import {
 	faUser,
 	faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { cn } from '@/lib/utils'
@@ -37,10 +37,10 @@ export const Icons = {
 			icon={faEyeSlash}
 		/>
 	),
-	facebook: (props: IconProps) => (
+	microsoft: (props: IconProps) => (
 		<FontAwesomeIcon
 			className={cn('w-4 h-4', props.className)}
-			icon={faFacebook}
+			icon={faMicrosoft}
 		/>
 	),
 	google: (props: IconProps) => (

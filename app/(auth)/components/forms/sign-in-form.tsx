@@ -39,7 +39,6 @@ export function SignInForm() {
 	})
 
 	function onSubmit(data: Inputs) {
-		console.log('hello bro')
 		if (!isLoaded) return
 
 		startTransition(async () => {

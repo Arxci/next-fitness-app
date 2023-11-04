@@ -25,7 +25,7 @@ interface SiteHeaderProps {
 }
 
 export function SiteHeader({ user }: SiteHeaderProps) {
-	const initials = `${user?.firstName?.charAt(0) ?? ''} ${
+	const initials = `${user?.firstName?.charAt(0) ?? ''}${
 		user?.lastName?.charAt(0) ?? ''
 	}`
 	const email = getUserEmail(user)
@@ -69,7 +69,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 											/>
 											<AvatarFallback>{initials}</AvatarFallback>
 										</Avatar>
-										<div className="flex flex-col  space-y-1">
+										<div className="flex flex-col space-y-1">
 											<p className="text-sm font-medium leading-none">
 												{user.firstName} {user.lastName}
 											</p>
@@ -119,12 +119,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 						) : (
 							<Button asChild>
 								<SignInButton>
-									<Link
-										href="/sign-in"
-										rel="noreferrer"
-									>
-										Sign In
-									</Link>
+									<Link href="/sign-in">Sign In</Link>
 								</SignInButton>
 							</Button>
 						)}

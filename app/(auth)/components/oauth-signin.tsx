@@ -10,7 +10,7 @@ import { toast } from 'sonner'
 
 const oauthProviders = [
 	{ name: 'Google', strategy: 'oauth_google', icon: 'google' },
-	{ name: 'Facebook', strategy: 'oauth_facebook', icon: 'facebook' },
+	{ name: 'Microsoft', strategy: 'oauth_microsoft', icon: 'microsoft' },
 ] satisfies {
 	name: string
 	icon: keyof typeof Icons
