@@ -4,19 +4,22 @@ import { Icons } from '@/components/icons'
 
 export default function SSOCallbackPage() {
 	return (
-		<Shell className="max-w-lg">
-			<div
-				role="status"
-				aria-label="Loading"
-				aria-describedby="loading-description"
-				className="flex items-center justify-center"
-			>
-				<AuthenticateWithRedirectCallback />
-				<Icons.spinner
-					className="h-8 w-8 animate-spin"
-					aria-hidden="true"
-				/>
-			</div>
-		</Shell>
+		<>
+			<AuthenticateWithRedirectCallback />
+			<Shell className="max-w-lg">
+				<div
+					role="status"
+					aria-label="Loading"
+					aria-describedby="loading-description"
+					className="flex items-center justify-center gap-2"
+				>
+					<p className="text-muted-foreground">Redirecting</p>
+					<Icons.spinner
+						className="h-4 w-4 animate-spin"
+						aria-hidden="true"
+					/>
+				</div>
+			</Shell>
+		</>
 	)
 }
