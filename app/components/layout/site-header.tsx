@@ -11,7 +11,7 @@ export function SiteHeader() {
 			<div className="container flex h-14 items-center">
 				<MainNav />
 				<div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-					<div className="w-full flex-1 md:w-auto md:flex-none">
+					<div className="w-[300px] ">
 						<CourseSearch />
 					</div>
 					<nav className="flex items-center space-x-2">
