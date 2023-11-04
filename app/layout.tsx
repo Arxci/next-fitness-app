@@ -6,6 +6,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
+import { Toaster } from '@/components/ui/toaster'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -30,6 +31,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 					)}
 				>
 					{children}
+					<Toaster />
 				</body>
 			</html>
 		</ClerkProvider>

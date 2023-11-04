@@ -6,6 +6,7 @@ import { type OAuthStrategy } from '@clerk/types'
 
 import { Button } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
+import { useToast } from '@/components/ui/use-toast'
 
 const oauthProviders = [
 	{ name: 'Google', strategy: 'oauth_google', icon: 'google' },
@@ -19,6 +20,7 @@ const oauthProviders = [
 export function OAuthSignIn() {
 	const [isLoading, setIsLoading] = React.useState<OAuthStrategy | null>(null)
 	const { signIn, isLoaded: signInLoaded } = useSignIn()
+	const { toast } = useToast()
 
 	async function oauthSignIn(provider: OAuthStrategy) {
 		if (!signInLoaded) return null
@@ -35,6 +37,8 @@ export function OAuthSignIn() {
 			const unknownError = 'Something went wrong, please try again.'
 
 			isClerkAPIResponseError(error)
+				? toast({ description: error.errors[0]?.longMessage ?? unknownError })
+				: toast({ description: unknownError })
 		}
 	}
 
