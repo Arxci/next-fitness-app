@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { SignInButton, SignOutButton, signO } from '@clerk/nextjs'
+import { SignInButton, SignOutButton } from '@clerk/nextjs'
 
 import { MainNav } from './main-nav'
 import { Button } from '../../../../components/ui/button'
