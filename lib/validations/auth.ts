@@ -14,6 +14,11 @@ export const authSchema = z.object({
 			message:
 				'Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special character',
 		}),
+})
+
+export const signupSchema = z.object({
+	email: authSchema.shape.email,
+	password: authSchema.shape.password,
 	fullname: z
 		.string()
 		.regex(/^[a-zA-Z]+ [a-zA-Z]+$/, { message: 'Please enter a valid name' }),

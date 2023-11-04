@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import type { z } from 'zod'
 
 import { catchClerkError } from '@/lib/utils'
-import { authSchema } from '@/lib/validations/auth'
+import { signupSchema } from '@/lib/validations/auth'
 import { Button } from '@/components/ui/button'
 import {
 	Form,
@@ -23,7 +23,7 @@ import { Icons } from '@/components/icons'
 import { PasswordInput } from '@/components/password-input'
 import { toast } from 'sonner'
 
-type Inputs = z.infer<typeof authSchema>
+type Inputs = z.infer<typeof signupSchema>
 
 export function SignUpForm() {
 	const router = useRouter()
@@ -32,7 +32,7 @@ export function SignUpForm() {
 
 	// react-hook-form
 	const form = useForm<Inputs>({
-		resolver: zodResolver(authSchema),
+		resolver: zodResolver(signupSchema),
 		defaultValues: {
 			email: '',
 			password: '',
