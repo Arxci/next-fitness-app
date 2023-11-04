@@ -63,12 +63,12 @@ const CourseSearch = () => {
 						<Button
 							onClick={clearInputHandle}
 							type="button"
-							aria-label="Clear search"
 							variant="ghost"
 							size="icon"
 							className="hover:bg-transparent h-auto group"
 						>
 							<Icons.cross className="text-muted-foreground hover:text-foreground group-focus:text-foreground" />
+							<span className="sr-only">Clear search</span>
 						</Button>
 					</div>
 				)}

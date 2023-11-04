@@ -5,7 +5,7 @@ import { SignInButton, SignOutButton } from '@clerk/nextjs'
 import { MainNav } from './main-nav'
 import { Button } from '../../../../components/ui/button'
 import { CartSheet } from '../cart/cart-sheet'
-import { CourseSearch } from './course-search'
+import { CourseSearch } from '../course-search'
 import { User } from '@clerk/nextjs/server'
 import { getUserEmail } from '@/lib/utils'
 import {
@@ -69,7 +69,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 											/>
 											<AvatarFallback>{initials}</AvatarFallback>
 										</Avatar>
-										<div className="flex flex-col space-y-1">
+										<div className="flex flex-col  space-y-1">
 											<p className="text-sm font-medium leading-none">
 												{user.firstName} {user.lastName}
 											</p>

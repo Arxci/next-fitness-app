@@ -6,7 +6,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import { Toaster } from '@/components/ui/toaster'
+import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',

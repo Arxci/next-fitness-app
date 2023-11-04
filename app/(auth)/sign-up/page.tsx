@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/card'
 import { Shell } from '@/components/shells/shell'
 import { OAuthSignIn } from '../components/oauth-signin'
+import { SignUpForm } from '../components/forms/sign-up-form'
 
 export const metadata: Metadata = {
 	title: 'Sign Up',
@@ -44,6 +45,7 @@ export default async function SignUpPage() {
 							</span>
 						</div>
 					</div>
+					<SignUpForm />
 				</CardContent>
 				<CardFooter>
 					<div className="text-sm text-muted-foreground">

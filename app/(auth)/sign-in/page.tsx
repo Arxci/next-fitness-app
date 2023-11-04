@@ -11,9 +11,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card'
-
 import { Shell } from '@/components/shells/shell'
 import { OAuthSignIn } from '../components/oauth-signin'
+import { SignInForm } from '../components/forms/sign-in-form'
 
 export const metadata: Metadata = {
 	title: 'Sign In',
@@ -45,6 +45,7 @@ export default async function SignInPage() {
 							</span>
 						</div>
 					</div>
+					<SignInForm />
 				</CardContent>
 				<CardFooter className="flex flex-wrap items-center justify-between gap-2">
 					<div className="text-sm text-muted-foreground">
