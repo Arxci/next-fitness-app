@@ -7,7 +7,7 @@ import { AuthHeader } from './components/layout/auth-header'
 
 export default function AuthLayout({ children }: React.PropsWithChildren) {
 	return (
-		<div className="md:grid min-h-screen grid-cols-1 overflow-hidden md:grid-cols-3 lg:grid-cols-2">
+		<div className="min-h-screen md:grid grid-cols-1 overflow-hidden md:grid-cols-3 lg:grid-cols-2">
 			<div className="hidden md:block relative h-full overflow-hidden ">
 				<Image
 					src="/images/auth-layout.webp"
@@ -34,7 +34,7 @@ export default function AuthLayout({ children }: React.PropsWithChildren) {
 			</div>
 
 			<AuthHeader />
-			<main className=" static md:top-0 md:col-span-2 md:flex md:translate-y-0 lg:col-span-1">
+			<main className="static md:top-0 min-h-screen md:col-span-2 items-center flex md:translate-y-0 lg:col-span-1">
 				{children}
 			</main>
 		</div>
