@@ -1,7 +1,5 @@
 import { type Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
-import { currentUser } from '@clerk/nextjs'
 
 import {
 	Card,
@@ -21,9 +19,6 @@ export const metadata: Metadata = {
 }
 
 export default async function SignUpPage() {
-	const user = await currentUser()
-	if (user) redirect('/')
-
 	return (
 		<Shell className="max-w-xl">
 			<Card>
@@ -49,7 +44,7 @@ export default async function SignUpPage() {
 				</CardContent>
 				<CardFooter>
 					<div className="text-sm text-muted-foreground">
-						Already have an account?{' '}
+						Already have an account?
 						<Link
 							aria-label="Sign in"
 							href="/sign-in"
