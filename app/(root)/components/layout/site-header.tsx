@@ -113,7 +113,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 						) : (
 							<Button asChild>
 								<Link
-									href="#"
+									href="/sign-in"
 									rel="noreferrer"
 								>
 									Sign In
