@@ -51,7 +51,7 @@ export default async function SignInPage() {
 						</span>
 						<Link
 							aria-label="Sign up"
-							href="/signup"
+							href="/sign-up"
 							className="text-primary underline-offset-4 transition-colors hover:underline"
 						>
 							Sign up
