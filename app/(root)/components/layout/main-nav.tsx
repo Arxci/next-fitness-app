@@ -14,6 +14,7 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { Icons } from '@/components/icons'
 
 const categories: { title: string; href: string; description: string }[] = [
 	{
@@ -74,6 +75,10 @@ export function MainNav() {
 				href="/"
 				className="mr-6 flex items-center space-x-2"
 			>
+				<Icons.logo
+					className="h-6 w-6"
+					aria-hidden="true"
+				/>
 				<span className="hidden font-bold sm:inline-block">
 					{siteConfig.name}
 				</span>
@@ -87,9 +92,13 @@ export function MainNav() {
 								<li className="row-span-3">
 									<NavigationMenuLink asChild>
 										<Link
-											className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+											className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:shadow-md focus:shadow-md"
 											href="/"
 										>
+											<Icons.logo
+												className="h-6 w-6"
+												aria-hidden="true"
+											/>
 											<div className="mb-2 mt-4 text-lg font-medium">
 												{siteConfig.name}
 											</div>

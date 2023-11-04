@@ -2,6 +2,7 @@ import {
 	faArrowRightFromBracket,
 	faCartShopping,
 	faGear,
+	faGraduationCap,
 	faMagnifyingGlass,
 	faUser,
 	faXmark,
@@ -15,6 +16,12 @@ interface IconProps {
 }
 
 export const Icons = {
+	logo: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faGraduationCap}
+		/>
+	),
 	cart: (props: IconProps) => (
 		<FontAwesomeIcon
 			className={cn('w-4 h-4', props.className)}

@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { siteConfig } from '@/config/site'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
+import { Icons } from '@/components/icons'
 
 export default function AuthLayout({ children }: React.PropsWithChildren) {
 	return (
@@ -21,6 +22,10 @@ export default function AuthLayout({ children }: React.PropsWithChildren) {
 					href="/"
 					className="absolute left-8 top-6 z-20 flex items-center text-lg font-bold tracking-tight"
 				>
+					<Icons.logo
+						className="mr-2 h-6 w-6"
+						aria-hidden="true"
+					/>
 					<span>{siteConfig.name}</span>
 				</Link>
 				<div className="absolute bottom-6 px-8 z-20  text-base">
