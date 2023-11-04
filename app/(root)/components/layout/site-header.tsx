@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { SignInButton, SignOutButton } from '@clerk/nextjs'
+import { SignInButton, SignOutButton, signO } from '@clerk/nextjs'
 
 import { MainNav } from './main-nav'
 import { Button } from '../../../../components/ui/button'
@@ -15,7 +15,6 @@ import {
 	DropdownMenuItem,
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
-	DropdownMenuShortcut,
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -82,7 +81,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 									<DropdownMenuSeparator />
 									<DropdownMenuGroup>
 										<DropdownMenuItem asChild>
-											<Link href="/dashboard/account">
+											<Link href="#">
 												<Icons.user
 													className="mr-2 h-4 w-4"
 													aria-hidden="true"
@@ -91,7 +90,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 											</Link>
 										</DropdownMenuItem>
 										<DropdownMenuItem asChild>
-											<Link href="/dashboard/settings">
+											<Link href="#">
 												<Icons.settings
 													className="mr-2 h-4 w-4"
 													aria-hidden="true"
@@ -103,28 +102,30 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 									<DropdownMenuSeparator />
 									<DropdownMenuItem
 										asChild
-										className="hover:bg-destructive/30 hover:text-destructive"
+										className="w-full"
 									>
 										<SignOutButton>
-											<p>
+											<button>
 												<Icons.exit
 													className="mr-2 h-4 w-4"
 													aria-hidden="true"
 												/>
 												Log out
-											</p>
+											</button>
 										</SignOutButton>
 									</DropdownMenuItem>
 								</DropdownMenuContent>
 							</DropdownMenu>
 						) : (
 							<Button asChild>
-								<Link
-									href="/sign-in"
-									rel="noreferrer"
-								>
-									Sign In
-								</Link>
+								<SignInButton>
+									<Link
+										href="/sign-in"
+										rel="noreferrer"
+									>
+										Sign In
+									</Link>
+								</SignInButton>
 							</Button>
 						)}
 					</nav>
