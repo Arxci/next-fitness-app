@@ -48,8 +48,6 @@ export function SignInForm() {
 					password: data.password,
 				})
 
-				console.log(result)
-
 				if (result.status === 'complete') {
 					await setActive({ session: result.createdSessionId })
 
@@ -78,6 +76,7 @@ export function SignInForm() {
 							<FormLabel>Email</FormLabel>
 							<FormControl>
 								<Input
+									autoComplete="email"
 									type="text"
 									placeholder="rodneymullen180@gmail.com"
 									{...field}
