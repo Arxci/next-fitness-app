@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import * as React from 'react'
 
 import {
 	Tooltip,
@@ -12,7 +12,7 @@ import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 
 const CourseSearch = () => {
-	const [value, setValue] = useState<string>('')
+	const [value, setValue] = React.useState<string>('')
 
 	const inputChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setValue(e.target.value)

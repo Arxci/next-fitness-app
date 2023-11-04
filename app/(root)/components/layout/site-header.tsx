@@ -62,7 +62,14 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 									align="end"
 									forceMount
 								>
-									<DropdownMenuLabel className="font-normal">
+									<DropdownMenuLabel className="font-normal flex space-x-2">
+										<Avatar className="h-8 w-8">
+											<AvatarImage
+												src={user.imageUrl}
+												alt={user.username ?? ''}
+											/>
+											<AvatarFallback>{initials}</AvatarFallback>
+										</Avatar>
 										<div className="flex flex-col space-y-1">
 											<p className="text-sm font-medium leading-none">
 												{user.firstName} {user.lastName}
