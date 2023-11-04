@@ -12,6 +12,7 @@ import {
 	CardTitle,
 } from '@/components/ui/card'
 import { Shell } from '@/components/shells/shell'
+import { OAuthSignIn } from '../components/oauth-signin'
 
 export const metadata: Metadata = {
 	title: 'Sign Up',
@@ -32,6 +33,7 @@ export default async function SignUpPage() {
 					</CardDescription>
 				</CardHeader>
 				<CardContent className="grid gap-4">
+					<OAuthSignIn />
 					<div className="relative">
 						<div className="absolute inset-0 flex items-center">
 							<span className="w-full border-t" />
