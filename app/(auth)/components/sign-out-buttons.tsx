@@ -3,11 +3,9 @@
 import * as React from 'react'
 import { useRouter } from 'next/navigation'
 import { useClerk } from '@clerk/clerk-react'
-import { SignOutButton } from '@clerk/nextjs'
 
-import { catchClerkError, cn } from '@/lib/utils'
-import { useMounted } from '@/hooks/use-mounted'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { catchClerkError } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
 
 export function SignOutButtons() {
