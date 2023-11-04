@@ -21,7 +21,6 @@ export function CartSheet() {
 					aria-label="Open cart"
 					variant="ghost"
 					size="icon"
-					className="relative"
 				>
 					<Icons.cart aria-hidden="true" />
 				</Button>
