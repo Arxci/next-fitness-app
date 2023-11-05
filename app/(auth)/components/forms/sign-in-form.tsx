@@ -65,7 +65,7 @@ export function SignInForm() {
 	return (
 		<Form {...form}>
 			<form
-				className="grid gap-4"
+				className="space-y-2"
 				onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
 			>
 				<FormField
@@ -104,6 +104,7 @@ export function SignInForm() {
 				/>
 				<Button
 					type="submit"
+					className="w-full"
 					disabled={isPending}
 				>
 					{isPending && (

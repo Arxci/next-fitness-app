@@ -5,7 +5,7 @@ import { siteConfig } from '@/config/site'
 
 export function AuthHeader() {
 	return (
-		<header className="md:hidden sticky top-0 z-50 w-full ">
+		<header className="lg:hidden">
 			<div className="container flex h-14 items-center">
 				<Link
 					href="/"

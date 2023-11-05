@@ -42,7 +42,7 @@ export function OAuthSignIn() {
 	}
 
 	return (
-		<div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
+		<div className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-4">
 			{oauthProviders.map((provider) => {
 				const Icon = Icons[provider.icon]
 
@@ -66,7 +66,7 @@ export function OAuthSignIn() {
 								aria-hidden="true"
 							/>
 						)}
-						{provider.name}
+						<span className="sr-only sm:not-sr-only">{provider.name}</span>
 					</Button>
 				)
 			})}

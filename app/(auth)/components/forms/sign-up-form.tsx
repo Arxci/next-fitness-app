@@ -70,7 +70,7 @@ export function SignUpForm() {
 	return (
 		<Form {...form}>
 			<form
-				className="grid gap-4"
+				className="space-y-2"
 				onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
 			>
 				<FormField
@@ -125,7 +125,11 @@ export function SignUpForm() {
 					)}
 				/>
 
-				<Button disabled={isPending}>
+				<Button
+					disabled={isPending}
+					className="w-full"
+					type="submit"
+				>
 					{isPending && (
 						<Icons.spinner
 							className="mr-2 h-4 w-4 animate-spin"

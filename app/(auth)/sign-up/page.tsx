@@ -21,14 +21,14 @@ export const metadata: Metadata = {
 export default async function SignUpPage() {
 	return (
 		<Shell className="max-w-xl">
-			<Card>
-				<CardHeader className="space-y-1">
+			<Card className="border-none shadow-none">
+				<CardHeader className="space-y-1 px-0 text-center">
 					<CardTitle className="text-2xl">Sign up</CardTitle>
 					<CardDescription>
 						Choose your preferred sign up method
 					</CardDescription>
 				</CardHeader>
-				<CardContent className="grid gap-4">
+				<CardContent className="grid gap-4  px-0">
 					<OAuthSignIn />
 					<div className="relative">
 						<div className="absolute inset-0 flex items-center">
@@ -42,9 +42,11 @@ export default async function SignUpPage() {
 					</div>
 					<SignUpForm />
 				</CardContent>
-				<CardFooter>
+				<CardFooter className=" px-0">
 					<div className="text-sm text-muted-foreground">
-						Already have an account?
+						<span className="mr-1 hidden sm:inline-block">
+							Already have an account?
+						</span>
 						<Link
 							aria-label="Sign in"
 							href="/sign-in"

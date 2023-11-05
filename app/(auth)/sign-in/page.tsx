@@ -21,14 +21,14 @@ export const metadata: Metadata = {
 export default async function SignInPage() {
 	return (
 		<Shell className="max-w-xl">
-			<Card>
-				<CardHeader className="space-y-1">
+			<Card className="border-none shadow-none">
+				<CardHeader className="space-y-1 px-0 text-center">
 					<CardTitle className="text-2xl">Sign in</CardTitle>
 					<CardDescription>
 						Choose your preferred sign in method
 					</CardDescription>
 				</CardHeader>
-				<CardContent className="grid gap-4">
+				<CardContent className="grid gap-4 px-0">
 					<OAuthSignIn />
 					<div className="relative">
 						<div className="absolute inset-0 flex items-center">
@@ -42,7 +42,7 @@ export default async function SignInPage() {
 					</div>
 					<SignInForm />
 				</CardContent>
-				<CardFooter className="flex flex-wrap items-center justify-between gap-2">
+				<CardFooter className="px-0 flex flex-wrap items-center justify-between gap-2">
 					<div className="text-sm text-muted-foreground">
 						<span className="mr-1 hidden sm:inline-block">
 							Don&apos;t have an account?
