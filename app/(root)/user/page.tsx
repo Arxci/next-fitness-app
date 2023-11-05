@@ -1,7 +1,7 @@
 import { currentUser } from '@clerk/nextjs'
 
 import { Separator } from '@/components/ui/separator'
-import { UserProfileForm } from './components/layout/forms/user-profile-form'
+import { UserProfileForm } from './components/forms/user-profile-form'
 
 export default async function SettingsProfilePage() {
 	const user = await currentUser()

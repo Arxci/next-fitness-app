@@ -13,13 +13,13 @@ interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
 	}[]
 }
 
-export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
+export function MobileNav({ className, items, ...props }: SidebarNavProps) {
 	const pathname = usePathname()
 
 	return (
 		<nav
 			className={cn(
-				'hidden lg:flex lg:flex-col lg:space-x-0 lg:space-y-1',
+				'flex space-x-2 bg-muted w-full max-w-[300px] p-1 rounded-lg lg:hidden',
 				className
 			)}
 			{...props}
@@ -31,9 +31,9 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
 					className={cn(
 						buttonVariants({ variant: 'ghost' }),
 						pathname === item.href
-							? 'bg-muted hover:bg-muted'
+							? 'bg-background shadow-sm hover:bg-background'
 							: 'hover:bg-transparent hover:underline',
-						'justify-start'
+						' w-full  '
 					)}
 				>
 					{item.title}

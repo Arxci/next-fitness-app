@@ -109,7 +109,7 @@ export function UserProfileForm({
 					)}
 				/>
 
-				<div className="grid lg:grid-cols-2 gap-2">
+				<div className="grid space-y-8 lg:grid-cols-2 lg:space-y-2">
 					<FormField
 						control={form.control}
 						name="firstName"

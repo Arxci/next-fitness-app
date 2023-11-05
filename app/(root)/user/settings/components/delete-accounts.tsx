@@ -21,6 +21,7 @@ import {
 	AlertDialogTrigger,
 } from '@/components/ui/alert-dialog'
 import { Icons } from '@/components/icons'
+import { Separator } from '@/components/ui/separator'
 
 export function DeleteAccount() {
 	const [isPending, startTransition] = React.useTransition()
@@ -46,11 +47,14 @@ export function DeleteAccount() {
 	}
 
 	return (
-		<div className="bg-destructive/20 p-6 w-full rounded-lg flex items-center justify-between">
-			<div className="space-y-2 text-destructive">
-				<h4 className="font-bold text-lg">Delete Account</h4>
-				<p>Permanently delete your account</p>
+		<div className="w-full space-y-6">
+			<div>
+				<h3 className="text-lg font-medium text-destructive">Delete Account</h3>
+				<p className="text-sm text-muted-foreground">
+					Once you delete your account, there is no going back.
+				</p>
 			</div>
+			<Separator />
 
 			<AlertDialog>
 				<AlertDialogTrigger asChild>
@@ -61,7 +65,7 @@ export function DeleteAccount() {
 								aria-hidden="true"
 							/>
 						)}
-						Delete
+						Delete your account
 					</Button>
 				</AlertDialogTrigger>
 				<AlertDialogContent>
