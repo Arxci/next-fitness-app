@@ -1,6 +1,8 @@
+import { currentUser } from '@clerk/nextjs'
+
 import { Separator } from '@/components/ui/separator'
 
-export default function SettingsProfilePage() {
+export default async function SettingsProfilePage() {
 	return (
 		<main className="space-y-6">
 			<div>

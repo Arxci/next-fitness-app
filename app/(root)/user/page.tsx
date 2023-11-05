@@ -1,7 +1,17 @@
+import { currentUser } from '@clerk/nextjs'
+
 import { Separator } from '@/components/ui/separator'
 import { UserProfileForm } from './components/layout/forms/user-profile-form'
 
-export default function SettingsProfilePage() {
+export default async function SettingsProfilePage() {
+	const user = await currentUser()
+
+	const userData = {
+		username: user?.username ?? '',
+		firstName: user?.firstName ?? '',
+		lastName: user?.lastName ?? '',
+	}
+
 	return (
 		<main className="space-y-6">
 			<div>
@@ -11,7 +21,7 @@ export default function SettingsProfilePage() {
 				</p>
 			</div>
 			<Separator />
-			<UserProfileForm />
+			<UserProfileForm user={userData} />
 		</main>
 	)
 }

@@ -1,9 +1,13 @@
+import { NextResponse } from 'next/server'
+
 import { User } from '@clerk/nextjs/server'
+import { auth, isClerkAPIResponseError } from '@clerk/nextjs'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import * as z from 'zod'
-import { isClerkAPIResponseError } from '@clerk/nextjs'
 import { toast } from 'sonner'
+
+import prismaDB from './prisma'
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))
@@ -45,16 +49,25 @@ export function catchClerkError(err: unknown) {
 	}
 }
 
-export function formatBytes(
-	bytes: number,
-	decimals = 0,
-	sizeType: 'accurate' | 'normal' = 'normal'
-) {
-	const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
-	const accurateSizes = ['Bytes', 'KiB', 'MiB', 'GiB', 'TiB']
-	if (bytes === 0) return '0 Byte'
-	const i = Math.floor(Math.log(bytes) / Math.log(1024))
-	return `${(bytes / Math.pow(1024, i)).toFixed(decimals)} ${
-		sizeType === 'accurate' ? accurateSizes[i] ?? 'Bytest' : sizes[i] ?? 'Bytes'
-	}`
+export async function isValidUser(): Promise<NextResponse> {
+	const { userId: id } = auth()
+
+	if (!id) {
+		return new NextResponse('User not authorized.', { status: 401 })
+	}
+
+	const user = await prismaDB.user.findFirst({
+		where: {
+			id,
+		},
+	})
+
+	// Validate that session user is valid
+	if (!user) {
+		return new NextResponse('User not authenticated.', {
+			status: 401,
+		})
+	}
+
+	return NextResponse.json(user)
 }

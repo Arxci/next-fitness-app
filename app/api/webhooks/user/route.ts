@@ -90,6 +90,25 @@ export const POST = async (req: Request) => {
 
 			return NextResponse.json(user)
 		}
+		case 'user.updated': {
+			const {
+				id,
+				username,
+				first_name: firstName,
+				last_name: lastName,
+			} = evt.data
+
+			const data = { username, lastName, firstName }
+
+			const user = await prismaDB.user.update({
+				where: {
+					id,
+				},
+				data: data,
+			})
+
+			return NextResponse.json(user)
+		}
 		default: {
 			return new NextResponse('Internal error', { status: 400 })
 		}
