@@ -55,9 +55,9 @@ export const POST = async (req: Request) => {
 		case 'user.created': {
 			const {
 				id,
-				image_url,
-				first_name,
-				last_name,
+				image_url: image,
+				first_name: firstName,
+				last_name: lastName,
 				username,
 				email_addresses,
 			} = evt.data
@@ -67,10 +67,10 @@ export const POST = async (req: Request) => {
 			const data = {
 				id,
 				username,
-				firstName: first_name,
-				lastName: last_name,
+				firstName,
+				lastName,
 				email,
-				image: image_url,
+				image,
 			}
 
 			const user = await prismaDB.user.create({
@@ -82,10 +82,10 @@ export const POST = async (req: Request) => {
 		case 'user.deleted': {
 			const { id } = evt.data
 
+			const data = { id }
+
 			const user = await prismaDB.user.delete({
-				where: {
-					id,
-				},
+				where: data,
 			})
 
 			return NextResponse.json(user)
