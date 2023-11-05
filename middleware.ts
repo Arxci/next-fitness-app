@@ -2,7 +2,13 @@ import { authMiddleware, redirectToSignIn } from '@clerk/nextjs'
 import { NextResponse } from 'next/server'
 
 export default authMiddleware({
-	publicRoutes: ['/', '/sign-in(.*)', '/sign-up(.*)', '/sso-callback(.*)'],
+	publicRoutes: [
+		'/',
+		'/sign-in(.*)',
+		'/sign-up(.*)',
+		'/sso-callback(.*)',
+		'/api(.*)',
+	],
 
 	afterAuth(auth, req, evt) {
 		// Redirect un authorized users navigating to private routes to the sign in
