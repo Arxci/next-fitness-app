@@ -1,7 +1,5 @@
 import Link from 'next/link'
 
-import { SignInButton } from '@clerk/nextjs'
-
 import { MainNav } from './main-nav'
 import { Button } from '../../../../components/ui/button'
 import { CartSheet } from '../cart/cart-sheet'
@@ -81,16 +79,16 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 									<DropdownMenuSeparator />
 									<DropdownMenuGroup>
 										<DropdownMenuItem asChild>
-											<Link href="#">
+											<Link href="/user">
 												<Icons.user
 													className="mr-2 h-4 w-4"
 													aria-hidden="true"
 												/>
-												Account
+												Profile
 											</Link>
 										</DropdownMenuItem>
 										<DropdownMenuItem asChild>
-											<Link href="#">
+											<Link href="/user/settings">
 												<Icons.settings
 													className="mr-2 h-4 w-4"
 													aria-hidden="true"
@@ -116,9 +114,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 							</DropdownMenu>
 						) : (
 							<Button asChild>
-								<SignInButton>
-									<Link href="/sign-in">Sign In</Link>
-								</SignInButton>
+								<Link href="/sign-in">Sign In</Link>
 							</Button>
 						)}
 					</nav>

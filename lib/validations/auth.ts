@@ -32,3 +32,30 @@ export const verifyEmailSchema = z.object({
 		})
 		.max(6),
 })
+
+export const profileFormSchema = z.object({
+	image: z
+		.object({
+			file: z.any().refine((files) => files?.length == 1, 'File is required.'),
+		})
+		.optional(),
+	username: z
+		.string()
+		.min(1, {
+			message: 'Username must be at least 1 character.',
+		})
+		.optional(),
+	firstName: z
+		.string()
+		.min(1, {
+			message: 'First name must be at least 1 character.',
+		})
+		.optional(),
+	lastName: z
+		.string()
+		.min(2, {
+			message: 'last name must be at least 1 character.',
+		})
+		.optional(),
+	password: authSchema.shape.password,
+})

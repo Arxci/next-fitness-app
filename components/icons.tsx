@@ -1,11 +1,14 @@
 import {
 	faArrowRightFromBracket,
 	faCartShopping,
+	faCircleCheck,
 	faEye,
 	faEyeSlash,
 	faGear,
 	faGraduationCap,
 	faMagnifyingGlass,
+	faTrash,
+	faUpload,
 	faUser,
 	faXmark,
 } from '@fortawesome/free-solid-svg-icons'
@@ -83,6 +86,24 @@ export const Icons = {
 		<FontAwesomeIcon
 			className={cn('w-4 h-4', props.className)}
 			icon={faGear}
+		/>
+	),
+	upload: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faUpload}
+		/>
+	),
+	trash: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faTrash}
+		/>
+	),
+	circleCheck: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faCircleCheck}
 		/>
 	),
 	spinner: (props: IconProps) => (
