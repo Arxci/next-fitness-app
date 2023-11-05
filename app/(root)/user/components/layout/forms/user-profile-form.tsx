@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useMemo } from 'react'
+import React from 'react'
 
 import { useRouter } from 'next/navigation'
 
@@ -53,14 +53,12 @@ export function UserProfileForm({
 
 	const form = useForm<ProfileFormValues>({
 		resolver: zodResolver(profileFormSchema),
-		defaultValues: useMemo(() => {
+		defaultValues: React.useMemo(() => {
 			return { ...user }
 		}, [user]),
 	})
 
 	function onSubmit(data: ProfileFormValues) {
-		console.log('hello')
-
 		startTransition(async () => {
 			try {
 				await axios.post('/api/user/update', data)
@@ -75,7 +73,7 @@ export function UserProfileForm({
 		})
 	}
 
-	useEffect(() => {
+	React.useEffect(() => {
 		form.reset({ ...user })
 	}, [user])
 

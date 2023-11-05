@@ -69,7 +69,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 										</Avatar>
 										<div className="flex flex-col space-y-1">
 											<p className="text-sm font-medium leading-none">
-												{user.firstName} {user.lastName}
+												{user.username ?? user.firstName + ' ' + user.lastName}
 											</p>
 											<p className="text-xs leading-none text-muted-foreground">
 												{email}
