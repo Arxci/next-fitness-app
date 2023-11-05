@@ -29,7 +29,7 @@ export function MobileNav({ className, items, ...props }: SidebarNavProps) {
 					key={item.href}
 					href={item.href}
 					className={cn(
-						buttonVariants({ variant: 'ghost' }),
+						buttonVariants({ variant: 'ghost', size: 'sm' }),
 						pathname === item.href
 							? 'bg-background shadow-sm hover:bg-background'
 							: 'hover:bg-transparent hover:underline',
