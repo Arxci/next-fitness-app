@@ -5,8 +5,8 @@ import { SidebarNav } from './components/layout/sidebar-nav'
 import { MobileNav } from './components/layout/mobile-nav'
 
 export const metadata: Metadata = {
-	title: 'Forms',
-	description: 'Advanced form example using react-hook-form and Zod.',
+	title: 'User Account',
+	description: 'Manage your account',
 }
 
 const sidebarNavItems = [
