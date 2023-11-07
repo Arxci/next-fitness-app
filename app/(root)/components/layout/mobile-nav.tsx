@@ -22,6 +22,12 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from '@/components/ui/sheet'
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { Icons } from '@/components/icons'
 
 export function MobileNav() {
@@ -33,29 +39,36 @@ export function MobileNav() {
 			open={isOpen}
 			onOpenChange={setIsOpen}
 		>
-			<SheetTrigger asChild>
-				<Button
-					variant="ghost"
-					size="icon"
-					className="rounded-full h-6 w-6 mr-2 lg:hidden "
-				>
-					<div
-						className="space-y-1 flex flex-col"
-						aria-hidden="true"
+			<TooltipProvider>
+				<Tooltip>
+					<SheetTrigger asChild>
+						<TooltipTrigger asChild>
+							<Button
+								variant="ghost"
+								size="icon"
+								className="rounded-full mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 w-6 focus-visible:ring-offset-0 lg:hidden"
+							>
+								<div
+									className="space-y-1 flex flex-col"
+									aria-hidden="true"
+								>
+									<span className="bg-foreground rounded-full w-6 h-[3px] " />
+									<span className="bg-foreground rounded-full w-6 h-[3px] " />
+									<span className="bg-foreground rounded-full w-6 h-[3px]  " />
+								</div>
+								<span className="sr-only">Toggle Menu</span>
+							</Button>
+						</TooltipTrigger>
+					</SheetTrigger>
+					<TooltipContent
+						side="right"
+						sideOffset={15}
 					>
-						<span className="bg-foreground rounded-full w-5 h-[2px] " />
-						<span className="bg-foreground rounded-full w-5 h-[2px] " />
-						<span className="bg-foreground rounded-full w-5 h-[2px]  " />
-					</div>
-					<span className="sr-only">Toggle Menu</span>
-				</Button>
-			</SheetTrigger>
-			<Link
-				href="/"
-				className="lg:hidden text-lg font-bold"
-			>
-				{siteConfig.name}
-			</Link>
+						Menu
+					</TooltipContent>
+				</Tooltip>
+			</TooltipProvider>
+
 			<SheetContent
 				side="left"
 				className="flex w-full gap-0 py-0 flex-col px-0 sm:max-w-lg"
@@ -75,13 +88,33 @@ export function MobileNav() {
 							<span className="sr-only">Home</span>
 						</Link>
 					</SheetTitle>
-					<SheetClose>
-						<Icons.cross
-							className="h-5 w-5 text-muted-foreground hover:text-foreground"
-							aria-hidden="true"
-						/>
-						<span className="sr-only">Close</span>
-					</SheetClose>
+					<TooltipProvider>
+						<Tooltip>
+							<SheetClose asChild>
+								<TooltipTrigger asChild>
+									<Button
+										variant="ghost"
+										className="rounded-full text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-5 w-5 lg:hidden !my-0 flex items-center "
+										size="icon"
+									>
+										<div className=" h-5 w-5">
+											<Icons.cross
+												className="h-5 w-5 "
+												aria-hidden="true"
+											/>
+											<span className="sr-only">Close</span>
+										</div>
+									</Button>
+								</TooltipTrigger>
+							</SheetClose>
+							<TooltipContent
+								side="left"
+								className="!translate-y-[-.5rem]"
+							>
+								Close
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
 				</SheetHeader>
 
 				<ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 ">
