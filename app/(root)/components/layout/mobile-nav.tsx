@@ -94,7 +94,7 @@ export function MobileNav() {
 								<TooltipTrigger asChild>
 									<Button
 										variant="ghost"
-										className="rounded-full text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-5 w-5 lg:hidden !my-0 flex items-center "
+										className="rounded-full text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-5 w-5  !my-0 flex items-center "
 										size="icon"
 									>
 										<div className=" h-5 w-5">
