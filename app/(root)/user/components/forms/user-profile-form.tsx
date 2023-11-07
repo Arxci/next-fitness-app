@@ -153,7 +153,10 @@ export function UserProfileForm({
 				</div>
 				<div className="space-x-2">
 					<AlertDialog>
-						<AlertDialogTrigger disabled={isPending}>
+						<AlertDialogTrigger
+							disabled={isPending}
+							asChild
+						>
 							<Button
 								type="button"
 								disabled={isPending}
