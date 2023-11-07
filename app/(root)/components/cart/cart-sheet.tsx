@@ -20,6 +20,7 @@ export function CartSheet() {
 				<Button
 					aria-label="Open cart"
 					variant="ghost"
+					className="rounded-full "
 					size="icon"
 				>
 					<Icons.cart aria-hidden="true" />

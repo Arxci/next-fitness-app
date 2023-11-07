@@ -43,9 +43,9 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 								<DropdownMenuTrigger asChild>
 									<Button
 										variant="secondary"
-										className="relative h-8 w-8 rounded-full"
+										className="relative h-10 w-10 rounded-full"
 									>
-										<Avatar className="h-8 w-8">
+										<Avatar className="h-10 w-10">
 											<AvatarImage
 												src={user.imageUrl}
 												alt={user.username ?? ''}
@@ -59,8 +59,8 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 									align="end"
 									forceMount
 								>
-									<DropdownMenuLabel className="font-normal flex space-x-2">
-										<Avatar className="h-8 w-8">
+									<DropdownMenuLabel className="font-normal flex space-x-2 items-center">
+										<Avatar className="h-10 w-10">
 											<AvatarImage
 												src={user.imageUrl}
 												alt={user.username ?? ''}
