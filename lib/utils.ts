@@ -43,7 +43,16 @@ export function catchClerkError(err: unknown) {
 		})
 		return toast(errors.join('\n'))
 	} else if (isClerkAPIResponseError(err)) {
-		return toast.error(err.errors[0]?.longMessage ?? unknownErr)
+		if (
+			err.errors[0]?.longMessage ===
+			"`reset_password_email_code` isn't allowed for `strategy` when user's password is not set."
+		) {
+			return toast.error('Account is registered under a separate provider.', {
+				description: ' Password cannot be changed.',
+			})
+		} else {
+			return toast.error(err.errors[0]?.longMessage ?? unknownErr)
+		}
 	} else {
 		return toast.error(unknownErr)
 	}

@@ -16,12 +16,8 @@ export const authSchema = z.object({
 		}),
 })
 
-export const signupSchema = z.object({
+export const checkEmailSchema = z.object({
 	email: authSchema.shape.email,
-	password: authSchema.shape.password,
-	fullname: z
-		.string()
-		.regex(/^[a-zA-Z]+ [a-zA-Z]+$/, { message: 'Please enter a valid name' }),
 })
 
 export const verifyEmailSchema = z.object({
@@ -31,6 +27,25 @@ export const verifyEmailSchema = z.object({
 			message: 'Verification code must be 6 characters long',
 		})
 		.max(6),
+})
+
+export const resetPasswordSchema = z
+	.object({
+		password: authSchema.shape.password,
+		confirmPassword: authSchema.shape.password,
+		code: verifyEmailSchema.shape.code,
+	})
+	.refine((data) => data.password === data.confirmPassword, {
+		message: 'Passwords do not match',
+		path: ['confirmPassword'],
+	})
+
+export const signupSchema = z.object({
+	email: authSchema.shape.email,
+	password: authSchema.shape.password,
+	fullname: z
+		.string()
+		.regex(/^[a-zA-Z]+ [a-zA-Z]+$/, { message: 'Please enter a valid name' }),
 })
 
 export const profileFormSchema = z.object({
