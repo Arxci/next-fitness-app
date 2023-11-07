@@ -52,9 +52,9 @@ export function MobileNav() {
 									className="space-y-1 flex flex-col"
 									aria-hidden="true"
 								>
-									<span className="bg-foreground rounded-full w-6 h-[3px] " />
-									<span className="bg-foreground rounded-full w-6 h-[3px] " />
-									<span className="bg-foreground rounded-full w-6 h-[3px]  " />
+									<span className="bg-foreground rounded-full w-6 h-[2px] " />
+									<span className="bg-foreground rounded-full w-6 h-[2px] " />
+									<span className="bg-foreground rounded-full w-6 h-[2px]  " />
 								</div>
 								<span className="sr-only">Toggle Menu</span>
 							</Button>
