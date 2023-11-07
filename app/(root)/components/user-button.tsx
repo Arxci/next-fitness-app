@@ -109,9 +109,7 @@ export function UserButton({ user }: UserButtonProps) {
 						</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
-				<TooltipContent>
-					<p>User profile</p>
-				</TooltipContent>
+				<TooltipContent className="hidden md:block r-0">User</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>
 	)

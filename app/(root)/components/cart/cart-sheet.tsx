@@ -68,9 +68,7 @@ export function CartSheet() {
 						</div>
 					</SheetContent>
 				</Sheet>
-				<TooltipContent>
-					<p>View cart</p>
-				</TooltipContent>
+				<TooltipContent className="hidden md:block">View cart</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>
 	)

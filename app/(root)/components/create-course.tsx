@@ -27,7 +27,9 @@ export function CreateCourse() {
 						</Link>
 					</Button>
 				</TooltipTrigger>
-				<TooltipContent>Create a course</TooltipContent>
+				<TooltipContent className="hidden md:block">
+					Create a course
+				</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>
 	)
