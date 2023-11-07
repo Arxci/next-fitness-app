@@ -39,7 +39,7 @@ export function DeleteAccount() {
 
 				toast.success('Account deleted.')
 			} catch (err: any) {
-				toast.success('Whoops, failed to update profile,', {
+				toast.success('Whoops, failed to delete account.,', {
 					description: err.response.data,
 				})
 			}
