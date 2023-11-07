@@ -52,7 +52,7 @@ const CourseSearch = () => {
 								className="w-full rounded-md bg-background  placeholder:text-muted-foreground focus-visible:outline-none  disabled:cursor-not-allowed "
 							/>
 						</TooltipTrigger>
-						<TooltipContent>
+						<TooltipContent sideOffset={13}>
 							<p>Search courses</p>
 						</TooltipContent>
 					</Tooltip>
