@@ -6,6 +6,7 @@ import { CartSheet } from '../cart/cart-sheet'
 import { CourseSearch } from '../course-search'
 import { User } from '@clerk/nextjs/server'
 import { UserButton } from '../user-button'
+import { CreateCourse } from '../create-course'
 
 interface SiteHeaderProps {
 	user: User | null
@@ -21,6 +22,8 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 						<CourseSearch />
 					</div>
 					<nav className="flex items-center space-x-2">
+						{user && <CreateCourse />}
+
 						<CartSheet />
 
 						{user ? (

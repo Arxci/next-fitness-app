@@ -7,6 +7,7 @@ import {
 	faGear,
 	faGraduationCap,
 	faMagnifyingGlass,
+	faPlus,
 	faTrash,
 	faUpload,
 	faUser,
@@ -26,6 +27,12 @@ export const Icons = {
 		<FontAwesomeIcon
 			className={cn('w-4 h-4', props.className)}
 			icon={faGraduationCap}
+		/>
+	),
+	plus: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faPlus}
 		/>
 	),
 	eye: (props: IconProps) => (

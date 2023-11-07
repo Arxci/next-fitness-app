@@ -24,21 +24,24 @@ export function MobileNav({ className, items, ...props }: SidebarNavProps) {
 			)}
 			{...props}
 		>
-			{items.map((item) => (
-				<Link
-					key={item.href}
-					href={item.href}
-					className={cn(
-						buttonVariants({ variant: 'ghost', size: 'sm' }),
-						pathname === item.href
-							? 'bg-background shadow-sm hover:bg-background'
-							: 'hover:bg-transparent hover:underline',
-						' w-full  '
-					)}
-				>
-					{item.title}
-				</Link>
-			))}
+			<ul>
+				{items.map((item) => (
+					<li key={item.href}>
+						<Link
+							href={item.href}
+							className={cn(
+								buttonVariants({ variant: 'ghost', size: 'sm' }),
+								pathname === item.href
+									? 'bg-background shadow-sm hover:bg-background'
+									: 'hover:bg-transparent hover:underline',
+								' w-full  '
+							)}
+						>
+							{item.title}
+						</Link>
+					</li>
+				))}
+			</ul>
 		</nav>
 	)
 }
