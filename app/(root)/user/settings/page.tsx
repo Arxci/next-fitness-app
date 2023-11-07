@@ -14,9 +14,12 @@ export default async function SettingsProfilePage() {
 			</div>
 			<Separator />
 			<div className="w-full flex justify-between space-x-2 items-center">
-				<p className="text-sm text-muted-foreground">
-					Change your password at anytime
-				</p>
+				<div>
+					<h3 className="text-lg font-medium ">Password</h3>
+					<p className="text-sm text-muted-foreground">
+						Change your password at anytime
+					</p>
+				</div>
 				<Button
 					asChild
 					variant="link"
