@@ -24,9 +24,12 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
 			)}
 			{...props}
 		>
-			<ul>
+			<ul className="w-full ">
 				{items.map((item) => (
-					<li className="key={item.href}">
+					<li
+						key={item.href}
+						className="w-full"
+					>
 						<Link
 							href={item.href}
 							className={cn(
@@ -34,7 +37,7 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
 								pathname === item.href
 									? 'bg-muted hover:bg-muted'
 									: 'hover:bg-transparent hover:underline',
-								'justify-start'
+								'justify-start w-full'
 							)}
 						>
 							{item.title}

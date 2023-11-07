@@ -16,61 +16,9 @@ import {
 } from '@/components/ui/navigation-menu'
 import { Icons } from '@/components/icons'
 
-const categories: { title: string; href: string; description: string }[] = [
-	{
-		title: 'Business',
-		href: '#',
-		description:
-			'Explore Business Essentials: Strategy, Finance, Marketing, Management, Entrepreneurship, Sales, Economics.',
-	},
-	{
-		title: 'Development',
-		href: '#',
-		description:
-			'Discover Development: Coding, Web, App, Software, Design, UX/UI, Tech Skills, Programming.',
-	},
-	{
-		title: 'Finance & Accounting',
-		href: '#',
-		description:
-			'Master Finance & Accounting: Investments, Analysis, Budgeting, Financial Statements, Risk Management.',
-	},
-	{
-		title: 'IT & Software',
-		href: '#',
-		description:
-			'Explore IT & Software: Coding, Networks, Cybersecurity, Cloud Computing, Development Tools.',
-	},
-	{
-		title: 'Design',
-		href: '#',
-		description:
-			'Discover Design: Graphic, UX/UI, Product, Web, Creative Tools, Visual Communication.',
-	},
-	{
-		title: 'Health & Fitness',
-		href: '#',
-		description:
-			'Embrace Health & Fitness: Wellness, Exercise, Nutrition, Mental Health, Personal Development.',
-	},
-]
-
-const support: { title: string; href: string; description: string }[] = [
-	{
-		title: 'FAQ',
-		href: '#',
-		description: `Quick answers for navigating ${siteConfig.name}. Support your fitness journey seamlessly.`,
-	},
-	{
-		title: 'Customer Service',
-		href: '#',
-		description: 'Get in contact with one of our representatives today.',
-	},
-]
-
 export function MainNav() {
 	return (
-		<div className="mr-4 hidden md:flex">
+		<div className="mr-4 hidden lg:flex">
 			<Link
 				href="/"
 				className="mr-6 flex items-center space-x-2"
@@ -109,19 +57,19 @@ export function MainNav() {
 									</NavigationMenuLink>
 								</li>
 								<ListItem
-									href="/docs"
+									href="#"
 									title="Work in progress"
 								>
 									Work in progress...
 								</ListItem>
 								<ListItem
-									href="/docs/installation"
+									href="#"
 									title="Work in progress"
 								>
 									Work in progress...
 								</ListItem>
 								<ListItem
-									href="/docs/primitives/typography"
+									href="#"
 									title="Work in progress"
 								>
 									Work in progress...
@@ -129,38 +77,24 @@ export function MainNav() {
 							</ul>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
-					<NavigationMenuItem>
-						<NavigationMenuTrigger>Categories</NavigationMenuTrigger>
-						<NavigationMenuContent>
-							<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-								{categories.map((item) => (
-									<ListItem
-										key={item.title}
-										title={item.title}
-										href={item.href}
-									>
-										{item.description}
-									</ListItem>
-								))}
-							</ul>
-						</NavigationMenuContent>
-					</NavigationMenuItem>
-					<NavigationMenuItem>
-						<NavigationMenuTrigger>Support</NavigationMenuTrigger>
-						<NavigationMenuContent>
-							<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-								{support.map((item) => (
-									<ListItem
-										key={item.title}
-										title={item.title}
-										href={item.href}
-									>
-										{item.description}
-									</ListItem>
-								))}
-							</ul>
-						</NavigationMenuContent>
-					</NavigationMenuItem>
+					{siteConfig.navLinks.map((item) => (
+						<NavigationMenuItem key={item.title}>
+							<NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+							<NavigationMenuContent>
+								<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+									{item.items.map((item) => (
+										<ListItem
+											key={item.title}
+											title={item.title}
+											href={item.href}
+										>
+											{item.description}
+										</ListItem>
+									))}
+								</ul>
+							</NavigationMenuContent>
+						</NavigationMenuItem>
+					))}
 				</NavigationMenuList>
 			</NavigationMenu>
 		</div>

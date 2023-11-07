@@ -1,5 +1,6 @@
 import {
 	faArrowRightFromBracket,
+	faBars,
 	faCartShopping,
 	faCircleCheck,
 	faEye,
@@ -39,6 +40,12 @@ export const Icons = {
 		<FontAwesomeIcon
 			className={cn('w-4 h-4', props.className)}
 			icon={faEye}
+		/>
+	),
+	bars: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4', props.className)}
+			icon={faBars}
 		/>
 	),
 	eyeSlash: (props: IconProps) => (

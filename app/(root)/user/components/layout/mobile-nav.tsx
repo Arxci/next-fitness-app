@@ -19,14 +19,17 @@ export function MobileNav({ className, items, ...props }: SidebarNavProps) {
 	return (
 		<nav
 			className={cn(
-				'flex space-x-2 bg-muted w-full max-w-[300px] p-1 rounded-lg lg:hidden',
+				' bg-muted w-full md:max-w-[300px] p-1 rounded-lg lg:hidden',
 				className
 			)}
 			{...props}
 		>
-			<ul>
+			<ul className="flex space-x-2">
 				{items.map((item) => (
-					<li key={item.href}>
+					<li
+						key={item.href}
+						className="w-full"
+					>
 						<Link
 							href={item.href}
 							className={cn(
