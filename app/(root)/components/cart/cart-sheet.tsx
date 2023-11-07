@@ -69,7 +69,7 @@ export function CartSheet() {
 					</SheetContent>
 				</Sheet>
 				<TooltipContent>
-					<p>View Cart</p>
+					<p>View cart</p>
 				</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>
