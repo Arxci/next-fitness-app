@@ -29,18 +29,28 @@ export function MobileNav() {
 			<SheetTrigger asChild>
 				<Button
 					variant="ghost"
-					className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
+					className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden "
 				>
-					<Icons.bars
-						className="h-5 w-5"
+					<div
+						className="space-y-1 flex flex-col"
 						aria-hidden="true"
-					/>
+					>
+						<span className="bg-foreground rounded-full w-6 h-[2px] " />
+						<span className="bg-foreground rounded-full w-6 h-[2px] " />
+						<span className="bg-foreground rounded-full w-6 h-[2px]  " />
+					</div>
 					<span className="sr-only">Toggle Menu</span>
 				</Button>
 			</SheetTrigger>
+			<Link
+				href="/"
+				className="lg:hidden font-bold"
+			>
+				{siteConfig.name}
+			</Link>
 			<SheetContent
 				side="left"
-				className="pl-1 pr-0 w-full "
+				className="!px-0 w-full "
 			>
 				<div className="px-7">
 					<Link
