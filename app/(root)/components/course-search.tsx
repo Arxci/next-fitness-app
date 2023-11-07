@@ -68,12 +68,7 @@ const CourseSearch = () => {
 						)}
 					</div>
 				</form>
-				<TooltipContent
-					sideOffset={13}
-					className="hidden md:block"
-				>
-					Search courses
-				</TooltipContent>
+				<TooltipContent sideOffset={13}>Search courses</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>
 	)
