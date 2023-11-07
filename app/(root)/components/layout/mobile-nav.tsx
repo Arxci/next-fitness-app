@@ -36,7 +36,8 @@ export function MobileNav() {
 			<SheetTrigger asChild>
 				<Button
 					variant="ghost"
-					className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden "
+					size="icon"
+					className="rounded-full h-6 w-6 mr-2 lg:hidden "
 				>
 					<div
 						className="space-y-1 flex flex-col"
@@ -51,7 +52,7 @@ export function MobileNav() {
 			</SheetTrigger>
 			<Link
 				href="/"
-				className="lg:hidden font-bold"
+				className="lg:hidden text-lg font-bold"
 			>
 				{siteConfig.name}
 			</Link>
@@ -70,7 +71,7 @@ export function MobileNav() {
 								className="mr-2 h-6 w-6"
 								aria-hidden="true"
 							/>
-							<span className="font-bold ">{siteConfig.name}</span>
+							<span className="font-bold text-md">{siteConfig.name}</span>
 							<span className="sr-only">Home</span>
 						</Link>
 					</SheetTitle>
@@ -153,7 +154,7 @@ export function MobileNav() {
 
 interface MobileLinkProps extends React.PropsWithChildren {
 	href: string
-	disabled?: boolean
+
 	segment: string
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -161,7 +162,7 @@ interface MobileLinkProps extends React.PropsWithChildren {
 function MobileLink({
 	children,
 	href,
-	disabled,
+
 	segment,
 	setIsOpen,
 }: MobileLinkProps) {
@@ -170,8 +171,7 @@ function MobileLink({
 			href={href}
 			className={cn(
 				'text-foreground/70 transition-colors hover:text-foreground',
-				href.includes(segment) && 'text-foreground',
-				disabled && 'pointer-events-none opacity-60'
+				href.includes(segment) && 'text-foreground'
 			)}
 			onClick={() => setIsOpen(false)}
 		>

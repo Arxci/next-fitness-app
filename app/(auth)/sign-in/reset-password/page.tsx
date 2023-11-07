@@ -19,13 +19,13 @@ export default function ResetPasswordPage() {
 	return (
 		<Shell className="max-w-xl">
 			<Card className="border-none shadow-none">
-				<CardHeader className="space-y-1">
+				<CardHeader className="space-y-1 px-0">
 					<CardTitle className="text-2xl">Reset password</CardTitle>
 					<CardDescription>
 						Enter your email address and we will send you a verification code
 					</CardDescription>
 				</CardHeader>
-				<CardContent>
+				<CardContent className="px-0">
 					<ResetPasswordForm />
 				</CardContent>
 			</Card>

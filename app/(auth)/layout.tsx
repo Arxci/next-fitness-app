@@ -6,7 +6,7 @@ import { AuthHeader } from './components/layout/auth-header'
 
 export default function AuthLayout({ children }: React.PropsWithChildren) {
 	return (
-		<div className="min-h-screen flex-col grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+		<div className="min-h-screen flex-col flex lg:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
 			<div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
 				<div className="absolute inset-0 bg-zinc-900" />
 				<Link
@@ -25,7 +25,7 @@ export default function AuthLayout({ children }: React.PropsWithChildren) {
 			</div>
 
 			<AuthHeader />
-			<main className=" flex items-center lg:top-0  lg:col-span-1">
+			<main className=" flex items-center flex-1 lg:top-0  h-full lg:col-span-1">
 				{children}
 			</main>
 		</div>

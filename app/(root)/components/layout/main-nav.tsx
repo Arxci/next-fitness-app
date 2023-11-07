@@ -27,7 +27,7 @@ export function MainNav() {
 					className="h-6 w-6"
 					aria-hidden="true"
 				/>
-				<span className="hidden font-bold sm:inline-block">
+				<span className="hidden text-lg font-bold sm:inline-block">
 					{siteConfig.name}
 				</span>
 			</Link>
