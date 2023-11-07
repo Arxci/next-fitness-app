@@ -85,7 +85,6 @@ export function MobileNav() {
 								aria-hidden="true"
 							/>
 							<span className="font-bold text-md">{siteConfig.name}</span>
-							<span className="sr-only">Home</span>
 						</Link>
 					</SheetTitle>
 					<TooltipProvider>
@@ -187,18 +186,11 @@ export function MobileNav() {
 
 interface MobileLinkProps extends React.PropsWithChildren {
 	href: string
-
 	segment: string
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function MobileLink({
-	children,
-	href,
-
-	segment,
-	setIsOpen,
-}: MobileLinkProps) {
+function MobileLink({ children, href, segment, setIsOpen }: MobileLinkProps) {
 	return (
 		<Link
 			href={href}
