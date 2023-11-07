@@ -14,7 +14,14 @@ import {
 } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from '@/components/ui/sheet'
 import { Icons } from '@/components/icons'
 
 export function MobileNav() {
@@ -35,9 +42,9 @@ export function MobileNav() {
 						className="space-y-1 flex flex-col"
 						aria-hidden="true"
 					>
-						<span className="bg-foreground rounded-full w-6 h-[2px] " />
-						<span className="bg-foreground rounded-full w-6 h-[2px] " />
-						<span className="bg-foreground rounded-full w-6 h-[2px]  " />
+						<span className="bg-foreground rounded-full w-5 h-[2px] " />
+						<span className="bg-foreground rounded-full w-5 h-[2px] " />
+						<span className="bg-foreground rounded-full w-5 h-[2px]  " />
 					</div>
 					<span className="sr-only">Toggle Menu</span>
 				</Button>
@@ -50,24 +57,34 @@ export function MobileNav() {
 			</Link>
 			<SheetContent
 				side="left"
-				className="!px-0 w-full "
+				className="flex w-full gap-0 py-0 flex-col px-0 sm:max-w-lg"
 			>
-				<div className="px-7">
-					<Link
-						href="/"
-						className="flex items-center"
-						onClick={() => setIsOpen(false)}
-					>
-						<Icons.logo
-							className="mr-2 h-6 w-6"
+				<SheetHeader className=" items-center h-14 flex w-full flex-row px-4 justify-between">
+					<SheetTitle>
+						<Link
+							href="/"
+							className="flex items-center"
+							onClick={() => setIsOpen(false)}
+						>
+							<Icons.logo
+								className="mr-2 h-6 w-6"
+								aria-hidden="true"
+							/>
+							<span className="font-bold ">{siteConfig.name}</span>
+							<span className="sr-only">Home</span>
+						</Link>
+					</SheetTitle>
+					<SheetClose className="hover:bg-foreground">
+						<Icons.cross
+							className="h-5 w-5 text-muted-foreground hover:text-foreground"
 							aria-hidden="true"
 						/>
-						<span className="font-bold text-lg">{siteConfig.name}</span>
-						<span className="sr-only">Home</span>
-					</Link>
-				</div>
-				<ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-					<div className="pl-1 pr-7">
+						<span className="sr-only">Close</span>
+					</SheetClose>
+				</SheetHeader>
+
+				<ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 ">
+					<div className="px-4">
 						<Accordion
 							type="multiple"
 							className="w-full"
