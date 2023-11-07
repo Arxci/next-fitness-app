@@ -41,7 +41,7 @@ export function CartSheet() {
 					<SheetContent className="flex w-full gap-0 py-0 flex-col px-0 sm:max-w-lg">
 						<SheetHeader className=" items-center h-14 flex w-full flex-row px-4 justify-between">
 							<SheetTitle>Cart (0) </SheetTitle>
-							<SheetClose className="hover:bg-foreground">
+							<SheetClose>
 								<Icons.cross
 									className="h-5 w-5 text-muted-foreground hover:text-foreground"
 									aria-hidden="true"

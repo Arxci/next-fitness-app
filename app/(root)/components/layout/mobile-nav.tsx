@@ -74,7 +74,7 @@ export function MobileNav() {
 							<span className="sr-only">Home</span>
 						</Link>
 					</SheetTitle>
-					<SheetClose className="hover:bg-foreground">
+					<SheetClose>
 						<Icons.cross
 							className="h-5 w-5 text-muted-foreground hover:text-foreground"
 							aria-hidden="true"
