@@ -37,7 +37,7 @@ export function CartSheet() {
 							</Button>
 						</TooltipTrigger>
 					</SheetTrigger>
-					<TooltipContent sideOffset={13}>View Cart</TooltipContent>
+					<TooltipContent>View Cart</TooltipContent>
 				</Tooltip>
 			</TooltipProvider>
 
