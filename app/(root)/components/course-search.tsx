@@ -25,9 +25,12 @@ const CourseSearch = () => {
 	}
 
 	return (
-		<form onSubmit={submitFormHandle}>
+		<form
+			onSubmit={submitFormHandle}
+			className="h-full"
+		>
 			<div
-				className="flex h-9 w-full space-x-2 border border-input bg-background px-3 py-2 ring-offset-background focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 disabled:opacity-50 rounded-full"
+				className="flex items-center  h-full w-full space-x-2 border border-input bg-background px-3 py-2 ring-offset-background focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 disabled:opacity-50 rounded-full"
 				role="search"
 			>
 				<div className="h-full aspect-square flex items-center justify-center">

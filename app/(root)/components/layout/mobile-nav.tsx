@@ -24,6 +24,7 @@ import {
 } from '@/components/ui/sheet'
 
 import { Icons } from '@/components/icons'
+import { CourseSearch } from '../course-search'
 
 export function MobileNav() {
 	const segment = useSelectedLayoutSegment()
@@ -73,8 +74,11 @@ export function MobileNav() {
 
 					<SheetClose />
 				</SheetHeader>
+				<div className="px-4 mb-2">
+					<CourseSearch />
+				</div>
 
-				<ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 ">
+				<ScrollArea className=" h-[calc(100vh-8rem)] pb-10 ">
 					<div className="px-4">
 						<Accordion
 							type="multiple"

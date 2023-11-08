@@ -20,7 +20,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 				<MainNav />
 				<MobileNav />
 				<div className="flex flex-1 items-center space-x-2 justify-end">
-					<div className="hidden md:block w-[300px] ">
+					<div className="hidden lg:block w-[300px] h-9">
 						<CourseSearch />
 					</div>
 					<nav className="flex items-center space-x-2">
