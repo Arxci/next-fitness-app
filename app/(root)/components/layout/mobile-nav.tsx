@@ -22,12 +22,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from '@/components/ui/sheet'
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from '@/components/ui/tooltip'
+
 import { Icons } from '@/components/icons'
 
 export function MobileNav() {
@@ -39,35 +34,23 @@ export function MobileNav() {
 			open={isOpen}
 			onOpenChange={setIsOpen}
 		>
-			<TooltipProvider>
-				<Tooltip>
-					<SheetTrigger asChild>
-						<TooltipTrigger asChild>
-							<Button
-								variant="ghost"
-								size="icon"
-								className="rounded-full mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 w-6 focus-visible:ring-offset-0 lg:hidden"
-							>
-								<div
-									className="space-y-1 flex flex-col"
-									aria-hidden="true"
-								>
-									<span className="bg-foreground rounded-full w-6 h-[2px] " />
-									<span className="bg-foreground rounded-full w-6 h-[2px] " />
-									<span className="bg-foreground rounded-full w-6 h-[2px]  " />
-								</div>
-								<span className="sr-only">Toggle Menu</span>
-							</Button>
-						</TooltipTrigger>
-					</SheetTrigger>
-					<TooltipContent
-						side="right"
-						sideOffset={15}
+			<SheetTrigger asChild>
+				<Button
+					variant="ghost"
+					size="icon"
+					className="rounded-full mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 w-6 focus-visible:ring-offset-0 lg:hidden"
+				>
+					<div
+						className="space-y-1 flex flex-col"
+						aria-hidden="true"
 					>
-						Menu
-					</TooltipContent>
-				</Tooltip>
-			</TooltipProvider>
+						<span className="bg-foreground rounded-full w-6 h-[2px] " />
+						<span className="bg-foreground rounded-full w-6 h-[2px] " />
+						<span className="bg-foreground rounded-full w-6 h-[2px]  " />
+					</div>
+					<span className="sr-only">Toggle Menu</span>
+				</Button>
+			</SheetTrigger>
 
 			<SheetContent
 				side="left"
@@ -87,33 +70,22 @@ export function MobileNav() {
 							<span className="font-bold text-md">{siteConfig.name}</span>
 						</Link>
 					</SheetTitle>
-					<TooltipProvider>
-						<Tooltip>
-							<SheetClose asChild>
-								<TooltipTrigger asChild>
-									<Button
-										variant="ghost"
-										className="rounded-full text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-5 w-5  !my-0 flex items-center "
-										size="icon"
-									>
-										<div className=" h-5 w-5">
-											<Icons.cross
-												className="h-5 w-5 "
-												aria-hidden="true"
-											/>
-											<span className="sr-only">Close</span>
-										</div>
-									</Button>
-								</TooltipTrigger>
-							</SheetClose>
-							<TooltipContent
-								side="left"
-								className="!translate-y-[-.5rem]"
-							>
-								Close
-							</TooltipContent>
-						</Tooltip>
-					</TooltipProvider>
+
+					<SheetClose asChild>
+						<Button
+							variant="ghost"
+							className="rounded-full text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-5 w-5  !my-0 flex items-center "
+							size="icon"
+						>
+							<div className=" h-5 w-5">
+								<Icons.cross
+									className="h-5 w-5 "
+									aria-hidden="true"
+								/>
+								<span className="sr-only">Close</span>
+							</div>
+						</Button>
+					</SheetClose>
 				</SheetHeader>
 
 				<ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 ">
