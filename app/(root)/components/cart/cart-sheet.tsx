@@ -12,22 +12,34 @@ import {
 	SheetTrigger,
 	SheetClose,
 } from '@/components/ui/sheet'
-
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { Icons } from '@/components/icons'
 
 export function CartSheet() {
 	return (
 		<Sheet>
-			<SheetTrigger asChild>
-				<Button
-					aria-label="Open cart"
-					variant="ghost"
-					className="rounded-full "
-					size="icon"
-				>
-					<Icons.cart aria-hidden="true" />
-				</Button>
-			</SheetTrigger>
+			<TooltipProvider>
+				<Tooltip>
+					<SheetTrigger asChild>
+						<TooltipTrigger asChild>
+							<Button
+								aria-label="Open cart"
+								variant="ghost"
+								className="rounded-full h-9 w-9"
+								size="icon"
+							>
+								<Icons.cart aria-hidden="true" />
+							</Button>
+						</TooltipTrigger>
+					</SheetTrigger>
+					<TooltipContent sideOffset={13}>View Cart</TooltipContent>
+				</Tooltip>
+			</TooltipProvider>
 
 			<SheetContent className="flex w-full gap-0 py-0 flex-col px-0 sm:max-w-lg">
 				<SheetHeader className=" items-center h-14 flex w-full flex-row px-4 justify-between">

@@ -31,9 +31,9 @@ export function UserButton({ user }: UserButtonProps) {
 			<DropdownMenuTrigger asChild>
 				<Button
 					variant="secondary"
-					className="relative h-10 w-10 rounded-full"
+					className="relative h-9 w-9 rounded-full"
 				>
-					<Avatar className="h-10 w-10">
+					<Avatar className="h-9 w-9">
 						<AvatarImage
 							src={user.imageUrl}
 							alt={user.username ?? ''}
@@ -48,7 +48,7 @@ export function UserButton({ user }: UserButtonProps) {
 				forceMount
 			>
 				<DropdownMenuLabel className="font-normal flex space-x-2 items-center">
-					<Avatar className="h-10 w-10">
+					<Avatar className="h-9 w-9">
 						<AvatarImage
 							src={user.imageUrl}
 							alt={user.username ?? ''}

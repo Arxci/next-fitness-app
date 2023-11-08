@@ -25,22 +25,22 @@ const CourseSearch = () => {
 	}
 
 	return (
-		<TooltipProvider>
-			<Tooltip>
-				<form onSubmit={submitFormHandle}>
-					<div
-						className="flex h-10 w-full space-x-2 border border-input bg-background px-3 py-2 ring-offset-background focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 disabled:opacity-50 rounded-full"
-						role="search"
-					>
-						<div className="h-full aspect-square flex items-center justify-center">
-							<Icons.search />
-						</div>
-						<label
-							htmlFor="search"
-							className="sr-only"
-						>
-							Search for a course
-						</label>
+		<form onSubmit={submitFormHandle}>
+			<div
+				className="flex h-9 w-full space-x-2 border border-input bg-background px-3 py-2 ring-offset-background focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 disabled:opacity-50 rounded-full"
+				role="search"
+			>
+				<div className="h-full aspect-square flex items-center justify-center">
+					<Icons.search />
+				</div>
+				<label
+					htmlFor="search"
+					className="sr-only"
+				>
+					Search for a course
+				</label>
+				<TooltipProvider>
+					<Tooltip>
 						<TooltipTrigger asChild>
 							<input
 								type="text"
@@ -52,25 +52,25 @@ const CourseSearch = () => {
 								className="w-full rounded-md bg-background  placeholder:text-muted-foreground focus-visible:outline-none  disabled:cursor-not-allowed "
 							/>
 						</TooltipTrigger>
-						{value && (
-							<div className="h-full aspect-square flex items-center justify-center">
-								<Button
-									onClick={clearInputHandle}
-									type="button"
-									variant="ghost"
-									size="icon"
-									className="hover:bg-transparent h-auto group"
-								>
-									<Icons.cross className="text-muted-foreground hover:text-foreground group-focus:text-foreground" />
-									<span className="sr-only">Clear search</span>
-								</Button>
-							</div>
-						)}
+						<TooltipContent sideOffset={13}>Search courses</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+				{value && (
+					<div className="h-full aspect-square flex items-center justify-center">
+						<Button
+							onClick={clearInputHandle}
+							type="button"
+							variant="ghost"
+							size="icon"
+							className="hover:bg-transparent h-auto group"
+						>
+							<Icons.cross className="text-muted-foreground hover:text-foreground group-focus:text-foreground" />
+							<span className="sr-only">Clear search</span>
+						</Button>
 					</div>
-				</form>
-				<TooltipContent sideOffset={13}>Search courses</TooltipContent>
-			</Tooltip>
-		</TooltipProvider>
+				)}
+			</div>
+		</form>
 	)
 }
 CourseSearch.displayName = 'SearchInput'

@@ -19,23 +19,18 @@ const SheetClose = React.forwardRef<
 	React.ComponentPropsWithoutRef<typeof SheetPrimitive.Close>
 >(({ className, ...props }, ref) => (
 	<SheetPrimitive.Close
-		className={cn(className)}
+		className={cn(
+			'!my-0 rounded-full group text-muted-foreground hover:text-foreground focus-visible:bg-transparent h-5 w-5 flex items-center focus:text-foreground justify-center focus-visible:ring-ring focus-visible:ring-offset-2',
+			className
+		)}
 		{...props}
 		ref={ref}
 	>
-		<Button
-			variant="ghost"
-			className="rounded-full text-muted-foreground hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-5 w-5 !my-0 flex items-center focus:text-foreground"
-			size="icon"
-		>
-			<div className=" h-5 w-5">
-				<Icons.cross
-					className="h-5 w-5 "
-					aria-hidden="true"
-				/>
-				<span className="sr-only">Close</span>
-			</div>
-		</Button>
+		<Icons.cross
+			className="h-5 w-5 "
+			aria-hidden="true"
+		/>
+		<span className="sr-only">Close</span>
 	</SheetPrimitive.Close>
 ))
 SheetClose.displayName = SheetPrimitive.Close.displayName

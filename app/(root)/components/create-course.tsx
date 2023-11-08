@@ -15,7 +15,7 @@ export function CreateCourse() {
 				<TooltipTrigger asChild>
 					<Button
 						variant="ghost"
-						className="rounded-full "
+						className="rounded-full h-9 w-9"
 						size="icon"
 						asChild
 					>
