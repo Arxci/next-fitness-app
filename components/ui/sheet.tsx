@@ -6,14 +6,39 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
 import { Icons } from '../icons'
+import { Button } from './button'
 
 const Sheet = SheetPrimitive.Root
 
 const SheetTrigger = SheetPrimitive.Trigger
 
-const SheetClose = SheetPrimitive.Close
-
 const SheetPortal = SheetPrimitive.Portal
+
+const SheetClose = React.forwardRef<
+	React.ElementRef<typeof SheetPrimitive.Close>,
+	React.ComponentPropsWithoutRef<typeof SheetPrimitive.Close>
+>(({ className, ...props }, ref) => (
+	<SheetPrimitive.Close
+		className={cn(className)}
+		{...props}
+		ref={ref}
+	>
+		<Button
+			variant="ghost"
+			className="rounded-full text-muted-foreground hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-5 w-5 !my-0 flex items-center focus:text-foreground"
+			size="icon"
+		>
+			<div className=" h-5 w-5">
+				<Icons.cross
+					className="h-5 w-5 "
+					aria-hidden="true"
+				/>
+				<span className="sr-only">Close</span>
+			</div>
+		</Button>
+	</SheetPrimitive.Close>
+))
+SheetClose.displayName = SheetPrimitive.Close.displayName
 
 const SheetOverlay = React.forwardRef<
 	React.ElementRef<typeof SheetPrimitive.Overlay>,
@@ -65,10 +90,6 @@ const SheetContent = React.forwardRef<
 			{...props}
 		>
 			{children}
-			<SheetPrimitive.Close className="hidden absolute right-4 top-4 rounded-sm  ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary opacity-70">
-				<Icons.cross className="h-4 w-4" />
-				<span className="sr-only">Close</span>
-			</SheetPrimitive.Close>
 		</SheetPrimitive.Content>
 	</SheetPortal>
 ))
