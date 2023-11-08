@@ -57,7 +57,7 @@ export function MobileNav() {
 				side="left"
 				className="flex w-full gap-0 py-0 flex-col px-0 sm:max-w-lg"
 			>
-				<SheetHeader className=" items-center h-14 flex w-full flex-row px-4 justify-between">
+				<SheetHeader className="items-center h-14 flex w-full flex-row px-4 justify-between">
 					<SheetTitle>
 						<Link
 							href="/"
@@ -74,7 +74,7 @@ export function MobileNav() {
 
 					<SheetClose />
 				</SheetHeader>
-				<div className="px-4 mb-2">
+				<div className="px-4 mb-4">
 					<CourseSearch />
 				</div>
 
