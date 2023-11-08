@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { useRouter } from 'next/navigation'
-import { useSignIn } from '@clerk/nextjs'
+import { useClerk, useSignIn } from '@clerk/nextjs'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -26,6 +26,8 @@ type Inputs = z.infer<typeof checkEmailSchema>
 
 export function ResetPasswordForm() {
 	const router = useRouter()
+	const { signOut } = useClerk()
+
 	const { isLoaded, signIn } = useSignIn()
 	const [isPending, startTransition] = React.useTransition()
 
@@ -42,17 +44,19 @@ export function ResetPasswordForm() {
 
 		startTransition(async () => {
 			try {
-				const firstFactor = await signIn.create({
-					strategy: 'reset_password_email_code',
-					identifier: data.email,
-				})
-
-				if (firstFactor.status === 'needs_first_factor') {
-					router.push('/sign-in/reset-password/step-2')
-					toast.message('Check your email', {
-						description: 'We sent you a 6-digit verification code.',
+				await signOut(async () => {
+					const firstFactor = await signIn.create({
+						strategy: 'reset_password_email_code',
+						identifier: data.email,
 					})
-				}
+
+					if (firstFactor.status === 'needs_first_factor') {
+						router.push('/sign-in/reset-password/step-2')
+						toast.message('Check your email', {
+							description: 'We sent you a 6-digit verification code.',
+						})
+					}
+				})
 			} catch (err) {
 				console.log('error ' + err)
 				catchClerkError(err)

@@ -74,7 +74,7 @@ export function MobileNav() {
 
 					<SheetClose />
 				</SheetHeader>
-				<div className="px-4 mb-4 h-10">
+				<div className="px-4 mb-4 h-10 ">
 					<CourseSearch />
 				</div>
 
