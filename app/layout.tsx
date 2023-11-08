@@ -4,9 +4,11 @@ import type { Metadata } from 'next'
 
 import { ClerkProvider } from '@clerk/nextjs'
 
+import { Toaster } from 'sonner'
+
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import { Toaster } from 'sonner'
+import { ThemeProvider } from '@/providers/theme-provider'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -30,8 +32,15 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 						fontSans.variable
 					)}
 				>
-					{children}
-					<Toaster closeButton />
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
+						{children}
+						<Toaster closeButton />
+					</ThemeProvider>
 				</body>
 			</html>
 		</ClerkProvider>

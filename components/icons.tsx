@@ -16,6 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Moon, Sun } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
@@ -29,6 +30,10 @@ export const Icons = {
 			className={cn('w-4 h-4', props.className)}
 			icon={faGraduationCap}
 		/>
+	),
+	sun: (props: IconProps) => <Sun className={cn('w-4 h-4', props.className)} />,
+	moon: (props: IconProps) => (
+		<Moon className={cn('w-4 h-4', props.className)} />
 	),
 	plus: (props: IconProps) => (
 		<FontAwesomeIcon

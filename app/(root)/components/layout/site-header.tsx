@@ -8,6 +8,7 @@ import { User } from '@clerk/nextjs/server'
 import { UserButton } from '../user-button'
 import { CreateCourse } from '../create-course'
 import { MobileNav } from './mobile-nav'
+import { ModeToggle } from '@/app/(root)/components/theme-toggle'
 
 interface SiteHeaderProps {
 	user: User | null
@@ -23,7 +24,9 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 					<div className="hidden lg:block w-[300px] h-9">
 						<CourseSearch />
 					</div>
+
 					<nav className="flex items-center space-x-2">
+						<ModeToggle />
 						{user && <CreateCourse />}
 						<CartSheet />
 						{user ? (
