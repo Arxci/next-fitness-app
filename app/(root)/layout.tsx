@@ -12,6 +12,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<div className="relative flex min-h-screen flex-col">
 			<SiteHeader user={user} />
+
 			{children}
 		</div>
 	)
