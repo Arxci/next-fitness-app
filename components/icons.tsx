@@ -31,96 +31,119 @@ export const Icons = {
 			icon={faGraduationCap}
 		/>
 	),
-	sun: (props: IconProps) => <Sun className={cn('w-4 h-4', props.className)} />,
+	sun: (props: IconProps) => (
+		<Sun
+			{...props}
+			className={cn('w-4 h-4', props.className)}
+		/>
+	),
 	moon: (props: IconProps) => (
-		<Moon className={cn('w-4 h-4', props.className)} />
+		<Moon
+			{...props}
+			className={cn('w-4 h-4', props.className)}
+		/>
 	),
 	plus: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faPlus}
 		/>
 	),
 	eye: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faEye}
 		/>
 	),
 	bars: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faBars}
 		/>
 	),
 	eyeSlash: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faEyeSlash}
 		/>
 	),
 	microsoft: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faMicrosoft}
 		/>
 	),
 	google: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faGoogle}
 		/>
 	),
 	cart: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faCartShopping}
 		/>
 	),
 	search: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faMagnifyingGlass}
 		/>
 	),
 	cross: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faXmark}
 		/>
 	),
 	user: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faUser}
 		/>
 	),
 	exit: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faArrowRightFromBracket}
 		/>
 	),
 	settings: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faGear}
 		/>
 	),
 	upload: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faUpload}
 		/>
 	),
 	trash: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faTrash}
 		/>
 	),
 	circleCheck: (props: IconProps) => (
 		<FontAwesomeIcon
+			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faCircleCheck}
 		/>
