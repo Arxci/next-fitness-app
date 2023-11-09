@@ -40,7 +40,7 @@ export function MainNav() {
 								<li className="row-span-3">
 									<NavigationMenuLink asChild>
 										<Link
-											className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:shadow-md focus:shadow-md"
+											className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:shadow-md focus:shadow-md dark:focus-within:ring-2 dark:focus-within:ring-ring dark:ring-offset-background dark:focus-within:ring-offset-2 dark:hover:ring-2 dark:hover:ring-ring dark:hover:ring-offset-2"
 											href="/"
 										>
 											<Icons.logo
