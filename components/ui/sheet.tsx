@@ -6,7 +6,6 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
 import { Icons } from '../icons'
-import { Button } from './button'
 
 const Sheet = SheetPrimitive.Root
 
@@ -20,7 +19,7 @@ const SheetClose = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<SheetPrimitive.Close
 		className={cn(
-			'!my-0 rounded-full group text-muted-foreground hover:text-foreground focus-visible:bg-transparent h-5 w-5 flex items-center focus:text-foreground justify-center focus-visible:ring-ring focus-visible:ring-offset-2',
+			'rounded-full group text-muted-foreground hover:text-foreground h-5 w-5 flex items-center focus:text-foreground justify-center focus-within:ring-2 focus-within:ring-ring ring-offset-background focus-within:ring-offset-2 outline-none',
 			className
 		)}
 		{...props}

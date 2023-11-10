@@ -27,7 +27,7 @@ interface IconProps {
 export const Icons = {
 	logo: (props: IconProps) => (
 		<FontAwesomeIcon
-			className={cn('w-4 h-4', props.className)}
+			className={cn('w-4 h-4 text-primary', props.className)}
 			icon={faGraduationCap}
 		/>
 	),

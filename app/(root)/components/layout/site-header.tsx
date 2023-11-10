@@ -32,7 +32,10 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 						{user ? (
 							<UserButton user={user} />
 						) : (
-							<Button asChild>
+							<Button
+								asChild
+								size="sm"
+							>
 								<Link href="/sign-in">Sign In</Link>
 							</Button>
 						)}
