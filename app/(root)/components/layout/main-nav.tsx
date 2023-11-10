@@ -79,7 +79,7 @@ export function MainNav() {
 					</NavigationMenuItem>
 					{siteConfig.navLinks.map((item) => (
 						<NavigationMenuItem key={item.title}>
-							<NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+							<NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
 							<NavigationMenuContent>
 								<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
 									{item.items.map((item) => (

@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
 		'Dive into diverse expert-led courses, a platform igniting learning journeys for knowledge and skill enhancement at your own pace.',
 	navLinks: [
 		{
-			title: 'categories',
+			title: 'Categories',
 			items: [
 				{
 					title: 'Business',
@@ -45,7 +45,7 @@ export const siteConfig: SiteConfig = {
 			],
 		},
 		{
-			title: 'support',
+			title: 'Support',
 			items: [
 				{
 					title: 'FAQ',
