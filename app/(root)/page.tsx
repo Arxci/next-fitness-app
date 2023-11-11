@@ -64,7 +64,7 @@ function HeroSection() {
 
 function CourseTabList() {
 	return (
-		<section className="overflow-x-hidden">
+		<section>
 			<Tabs defaultValue="featured">
 				<div className="container space-y-2">
 					<TabsList className="bg-transparent h-[50px] space-x-4 sm:space-x-6">

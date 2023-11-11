@@ -39,8 +39,7 @@ export function CourseSearch() {
 		if (items.length && e.key === 'ArrowDown') {
 			e.preventDefault()
 			setCursor((prevState) => {
-				const newCursor =
-					prevState < items.length - 1 ? prevState + 1 : prevState
+				const newCursor = prevState < items.length - 1 ? prevState + 1 : 0
 				setSearchItem(items[newCursor].name)
 				return newCursor
 			})
@@ -48,7 +47,7 @@ export function CourseSearch() {
 		if (items.length && e.key === 'ArrowUp') {
 			e.preventDefault()
 			setCursor((prevState) => {
-				const newCursor = prevState > 0 ? prevState - 1 : prevState
+				const newCursor = prevState > 0 ? prevState - 1 : items.length - 1
 				setSearchItem(items[newCursor].name)
 				return newCursor
 			})
