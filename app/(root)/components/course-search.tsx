@@ -120,7 +120,7 @@ export function CourseSearch() {
 						onKeyDown={inputKeyDownHandle}
 						onFocus={inputFocusHandle}
 						onBlur={inputBlurHandle}
-						className="w-full  
+						className="w-full bg-background
 									placeholder:text-muted-foreground focus-visible:outline-none  disabled:cursor-not-allowed "
 					/>
 

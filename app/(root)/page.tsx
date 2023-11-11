@@ -33,8 +33,8 @@ function HeroSection() {
 								Empower Your Journey with SkillJet
 							</h2>
 							<p className="text-white/80 text-lg max-w-[800px]">
-								Access a vast library of courses, expert insights, and tools
-								designed to drive your personal and professional development.
+								Empower yourself with in-depth courses, expert support, and a
+								network that propels your journey to mastery and beyond.
 							</p>
 						</div>
 						<Button
