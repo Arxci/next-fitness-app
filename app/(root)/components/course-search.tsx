@@ -5,7 +5,6 @@ import React, {
 	ChangeEvent,
 	KeyboardEvent,
 	FormEvent,
-	FocusEvent,
 	useEffect,
 } from 'react'
 
@@ -54,12 +53,12 @@ export function CourseSearch() {
 		}
 	}
 
-	const inputFocusHandle = (_: FocusEvent<HTMLInputElement>) => {
+	const inputFocusHandle = () => {
 		setHasFocus(true)
 		setDisplayResults(true)
 	}
 
-	const inputBlurHandle = (_: FocusEvent<HTMLInputElement>) => {
+	const inputBlurHandle = () => {
 		setHasFocus(false)
 	}
 

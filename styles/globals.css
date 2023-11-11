@@ -68,6 +68,12 @@
 	}
 }
 
+@layer utilities {
+	.focus-custom {
+		@apply border-border outline-none ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+	}
+}
+
 @media (max-width: 640px) {
 	.container {
 		@apply px-4;

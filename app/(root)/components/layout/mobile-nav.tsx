@@ -60,7 +60,7 @@ export function MobileNav() {
 					<SheetTitle>
 						<Link
 							href="/"
-							className="flex items-center"
+							className="flex items-center focus-custom rounded-md"
 							onClick={() => setIsOpen(false)}
 						>
 							<Icons.logo
@@ -153,7 +153,7 @@ function MobileLink({ children, href, segment, setIsOpen }: MobileLinkProps) {
 		<Link
 			href={href}
 			className={cn(
-				'text-foreground/70 transition-colors hover:text-foreground',
+				'text-foreground/70 focus-custom transition-colors hover:text-foreground',
 				href.includes(segment) && 'text-foreground'
 			)}
 			onClick={() => setIsOpen(false)}

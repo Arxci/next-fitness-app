@@ -21,7 +21,7 @@ export function MainNav() {
 		<div className="mr-4 hidden lg:flex">
 			<Link
 				href="/"
-				className="mr-6 flex items-center space-x-2"
+				className="mr-6 flex items-center space-x-2 rounded-md focus-custom"
 			>
 				<Icons.logo
 					className="h-6 w-6"
