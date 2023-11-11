@@ -11,8 +11,6 @@ import React, {
 
 import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
-import { Separator } from '@/components/ui/separator'
 
 export function CourseSearch() {
 	const [searchItem, setSearchItem] = useState<string>('')
@@ -186,10 +184,9 @@ function ListItem({
 				onMouseMove={() => onHoverChange(item.id)}
 				onClick={() => onItemClicked(item.id)}
 				tabIndex={-1}
-				className={cn(
-					'w-full text-start p-1 text-md rounded-sm',
+				className={`w-full text-start p-1 text-md rounded-sm ${
 					active ? 'bg-muted' : ''
-				)}
+				}`}
 			>
 				{item.name}
 			</button>
