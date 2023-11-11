@@ -64,10 +64,10 @@ function HeroSection() {
 
 function CourseTabList() {
 	return (
-		<section className="">
+		<section className="overflow-x-hidden">
 			<Tabs defaultValue="featured">
 				<div className="container space-y-2">
-					<TabsList className="bg-transparent h-[50px] space-x-6">
+					<TabsList className="bg-transparent h-[50px] space-x-4 sm:space-x-6">
 						<CourseTabTrigger
 							value="featured"
 							label="Featured"
@@ -99,7 +99,7 @@ function CourseTabTrigger({ value, label }: { value: string; label: string }) {
 	return (
 		<TabsTrigger
 			value={value}
-			className="data-[state=active]:text-foreground text-md h-[50px]  relative after:content:[''] data-[state=active]:after:w-full after:bg-foreground after:h-[1px] text-xl after:bottom-0 after:absolute p-0"
+			className="data-[state=active]:text-foreground text-md h-[50px]  relative after:content:[''] data-[state=active]:after:w-full after:bg-foreground after:h-[1px] text-md sm:text-xl after:left-0 after:bottom-0 after:absolute p-0 "
 		>
 			{label}
 		</TabsTrigger>
