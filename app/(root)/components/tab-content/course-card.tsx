@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export function CourseCard(course: {
 	image: string
@@ -36,7 +37,17 @@ export function CourseCard(course: {
 					</div>
 				</div>
 			</CardContent>
-			<CardFooter className="px-4 pb-4 ">
+			<CardFooter className="px-4 pb-4 flex flex-col space-y-2">
+				<Button
+					className="space-x-2 w-full"
+					variant="outline"
+					asChild
+				>
+					<Link href="#">
+						<span>Preview</span>
+						<Icons.eye aria-hidden="true" />
+					</Link>
+				</Button>
 				<Button className="space-x-2 w-full">
 					<span>Add to cart</span>
 					<Icons.cart aria-hidden="true" />

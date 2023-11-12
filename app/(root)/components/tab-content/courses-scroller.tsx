@@ -37,17 +37,7 @@ export function CoursesScroller({ children }: { children: React.ReactNode }) {
 	}
 
 	return (
-		<div className="relative">
-			{showLeftButton && (
-				<Button
-					onClick={scrollLeftHandle}
-					className="z-10 rounded-full absolute shadow-md w-10 h-10 left-1 md:-left-5 top-1/2 transform -translate-y-1/2"
-				>
-					<span className="sr-only">Scroll right</span>
-					<Icons.chevronLeft className="text-background " />
-				</Button>
-			)}
-
+		<div className="flex flex-col">
 			<ul
 				ref={scroller}
 				onScroll={scrollHandle}
@@ -55,15 +45,24 @@ export function CoursesScroller({ children }: { children: React.ReactNode }) {
 			>
 				{children}
 			</ul>
-			{showRightButton && (
+			<div className="ml-auto space-x-2 ">
 				<Button
+					disabled={showRightButton}
+					onClick={scrollLeftHandle}
+					className="z-10 rounded-full shadow-md w-10 h-10 "
+				>
+					<span className="sr-only">Scroll right</span>
+					<Icons.chevronLeft className="text-background " />
+				</Button>
+				<Button
+					disabled={showLeftButton}
 					onClick={scrollRightHandle}
-					className="z-10 rounded-full shadow-md absolute w-10 h-10 right-1 md:-right-5 top-1/2 transform -translate-y-1/2"
+					className="z-10 rounded-full shadow-md  w-10 h-10 "
 				>
 					<span className="sr-only">Scroll right</span>
 					<Icons.chevronRight className="text-background " />
 				</Button>
-			)}
+			</div>
 		</div>
 	)
 }
