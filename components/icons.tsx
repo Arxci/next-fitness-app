@@ -2,6 +2,8 @@ import {
 	faArrowRightFromBracket,
 	faBars,
 	faCartShopping,
+	faChevronLeft,
+	faChevronRight,
 	faCircleCheck,
 	faEye,
 	faEyeSlash,
@@ -9,6 +11,7 @@ import {
 	faGraduationCap,
 	faMagnifyingGlass,
 	faPlus,
+	faStar,
 	faTrash,
 	faUpload,
 	faUser,
@@ -29,6 +32,18 @@ export const Icons = {
 		<FontAwesomeIcon
 			className={cn('w-4 h-4 text-primary', props.className)}
 			icon={faGraduationCap}
+		/>
+	),
+	chevronRight: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4 text-primary', props.className)}
+			icon={faChevronRight}
+		/>
+	),
+	chevronLeft: (props: IconProps) => (
+		<FontAwesomeIcon
+			className={cn('w-4 h-4 text-primary', props.className)}
+			icon={faChevronLeft}
 		/>
 	),
 	sun: (props: IconProps) => (
@@ -104,6 +119,13 @@ export const Icons = {
 			{...props}
 			className={cn('w-4 h-4', props.className)}
 			icon={faXmark}
+		/>
+	),
+	star: (props: IconProps) => (
+		<FontAwesomeIcon
+			{...props}
+			className={cn('w-4 h-4', props.className)}
+			icon={faStar}
 		/>
 	),
 	user: (props: IconProps) => (

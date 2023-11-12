@@ -1,7 +1,55 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+
 import { Separator } from '@/components/ui/separator'
 
+import { CoursesScroller } from '../tab-content/courses-scroller'
+import { CourseCard } from '../tab-content/course-card'
+
 export function CourseTabList() {
+	const featuredCourse = [
+		{
+			id: 0,
+			image: '',
+			title: 'The Complete 2023 Web Development Bootcamp',
+			author: 'Dr. Angela Yu',
+			rating: 4.7,
+			price: 109.99,
+		},
+		{
+			id: 1,
+			image: '',
+			title: 'The Complete 2023 Web Development Bootcamp',
+			author: 'Dr. Angela Yu',
+			rating: 4.7,
+			price: 109.99,
+		},
+		{
+			id: 2,
+			image: '',
+			title: 'The Complete 2023 Web Development Bootcamp',
+			author: 'Dr. Angela Yu',
+			rating: 4.7,
+
+			price: 109.99,
+		},
+		{
+			id: 3,
+			image: '',
+			title: 'The Complete 2023 Web Development Bootcamp',
+			author: 'Dr. Angela Yu',
+			rating: 4.7,
+			price: 109.99,
+		},
+		{
+			id: 4,
+			image: '',
+			title: 'The Complete 2023 Web Development Bootcamp',
+			author: 'Dr. Angela Yu',
+			rating: 4.7,
+			price: 109.99,
+		},
+	]
+
 	return (
 		<section>
 			<Tabs defaultValue="featured">
@@ -22,10 +70,19 @@ export function CourseTabList() {
 					</TabsList>
 				</div>
 				<Separator />
-				<div className="bg-muted-foreground/10 h-[300px]">
+				<div className="bg-muted-foreground/10 py-2">
 					<div className="container">
 						<CourseTabContent value="featured">
-							<FeaturedCourses />
+							<CoursesScroller>
+								{featuredCourse.map((course) => (
+									<li key={course.id}>
+										<CourseCard
+											key={course.id}
+											{...course}
+										/>
+									</li>
+								))}
+							</CoursesScroller>
 						</CourseTabContent>
 						<CourseTabContent value="trending">Trending</CourseTabContent>
 						<CourseTabContent value="new">New & Hot</CourseTabContent>
@@ -62,8 +119,4 @@ function CourseTabContent({
 			<div className="py-6">{children}</div>
 		</TabsContent>
 	)
-}
-
-function FeaturedCourses() {
-	return <div></div>
 }

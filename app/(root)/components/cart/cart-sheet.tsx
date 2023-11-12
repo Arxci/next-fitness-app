@@ -33,6 +33,7 @@ export function CartSheet() {
 								className="rounded-full h-9 w-9"
 								size="icon"
 							>
+								<span className="sr-only">Add to cart</span>
 								<Icons.cart aria-hidden="true" />
 							</Button>
 						</TooltipTrigger>
